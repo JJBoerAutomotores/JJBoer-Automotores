@@ -1272,15 +1272,30 @@ let filtroMarcaActivo = 'todos';
 let filtroCombActivo = 'todos';
 let searchQuery = '';
 
+async function mlFetch(url) {
+  // Intento 1: directo
+  try {
+    const res = await fetch(url);
+    if (res.ok) return await res.json();
+  } catch(e) {}
+  // Intento 2: corsproxy.io
+  try {
+    const res = await fetch('https://corsproxy.io/?' + encodeURIComponent(url));
+    if (res.ok) return await res.json();
+  } catch(e) {}
+  // Intento 3: allorigins
+  try {
+    const res = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(url));
+    if (res.ok) return await res.json();
+  } catch(e) {}
+  return null;
+}
+
 async function fetchAutos() {
   try {
-    // Buscar publicaciones activas del vendedor en categoría autos
-    const res = await fetch(
-      `${ML_API}/sites/MLA/search?seller_id=${ML_SELLER_ID}&category=MLA1744&limit=50&status=active`
-    );
-    if (!res.ok) throw new Error('API error');
-    const data = await res.json();
-    return data.results || [];
+    const url = `${ML_API}/sites/MLA/search?seller_id=${ML_SELLER_ID}&category=MLA1744&limit=50&status=active`;
+    const data = await mlFetch(url);
+    return data?.results || [];
   } catch(e) {
     console.warn('Error fetching ML:', e);
     return [];
@@ -1289,9 +1304,7 @@ async function fetchAutos() {
 
 async function fetchItemDetail(id) {
   try {
-    const res = await fetch(`${ML_API}/items/${id}`);
-    if (!res.ok) throw new Error();
-    return await res.json();
+    return await mlFetch(`${ML_API}/items/${id}`);
   } catch(e) {
     return null;
   }
