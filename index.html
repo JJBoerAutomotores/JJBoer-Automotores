@@ -1269,33 +1269,52 @@ let filtroCombActivo = 'todos';
 let searchQuery = '';
 
 async function mlFetch(url) {
-  // Intento 1: directo
-  try {
-    const res = await fetch(url);
-    if (res.ok) return await res.json();
-  } catch(e) {}
-  // Intento 2: corsproxy.io
-  try {
-    const res = await fetch('https://corsproxy.io/?' + encodeURIComponent(url));
-    if (res.ok) return await res.json();
-  } catch(e) {}
-  // Intento 3: allorigins
-  try {
-    const res = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(url));
-    if (res.ok) return await res.json();
-  } catch(e) {}
+  const proxies = [
+    u => u,
+    u => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(u),
+    u => 'https://corsproxy.io/?' + encodeURIComponent(u),
+    u => 'https://thingproxy.freeboard.io/fetch/' + u,
+  ];
+  for (const makeUrl of proxies) {
+    try {
+      const res = await fetch(makeUrl(url));
+      if (res.ok) {
+        const data = await res.json();
+        return data;
+      }
+    } catch(e) { /* siguiente */ }
+  }
   return null;
 }
 
 async function fetchAutos() {
+  // Estrategia 1: endpoint /search sin categoría
   try {
-    const url = `${ML_API}/sites/MLA/search?seller_id=${ML_SELLER_ID}&category=MLA1744&limit=50&status=active`;
-    const data = await mlFetch(url);
-    return data?.results || [];
-  } catch(e) {
-    console.warn('Error fetching ML:', e);
-    return [];
-  }
+    const url1 = `${ML_API}/sites/MLA/search?seller_id=${ML_SELLER_ID}&limit=50`;
+    const data1 = await mlFetch(url1);
+    if (data1?.results?.length > 0 && typeof data1.results[0] === 'object') {
+      return data1.results;
+    }
+  } catch(e) {}
+
+  // Estrategia 2: endpoint /users/ID/items/search (devuelve IDs, luego buscamos detalle)
+  try {
+    const url2 = `${ML_API}/users/${ML_SELLER_ID}/items/search?limit=50`;
+    const data2 = await mlFetch(url2);
+    if (data2?.results?.length > 0 && typeof data2.results[0] === 'string') {
+      const ids = data2.results.slice(0, 20).join(',');
+      const detalle = await mlFetch(`${ML_API}/items?ids=${ids}`);
+      if (detalle) {
+        return detalle
+          .filter(d => d.code === 200)
+          .map(d => d.body)
+          .filter(Boolean);
+      }
+    }
+  } catch(e) {}
+
+  console.warn('No se pudo cargar el stock de ML');
+  return [];
 }
 
 async function fetchItemDetail(id) {
