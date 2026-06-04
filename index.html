@@ -1268,41 +1268,27 @@ let filtroMarcaActivo = 'todos';
 let filtroCombActivo = 'todos';
 let searchQuery = '';
 
-async function mlFetch(url) {
-  const proxies = [
-    u => u,
-    u => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(u),
-    u => 'https://corsproxy.io/?' + encodeURIComponent(u),
-    u => 'https://thingproxy.freeboard.io/fetch/' + u,
-  ];
-  for (const makeUrl of proxies) {
-    try {
-      const res = await fetch(makeUrl(url));
-      if (res.ok) {
-        const data = await res.json();
-        return data;
-      }
-    } catch(e) { /* siguiente */ }
-  }
-  return null;
+async function mlFetch(mlUrl) {
+  // Usa la función serverless de Vercel como proxy
+  const res = await fetch('/api/ml?url=' + encodeURIComponent(mlUrl));
+  if (!res.ok) throw new Error('API error ' + res.status);
+  return await res.json();
 }
 
 async function fetchAutos() {
-  // Estrategia 1: endpoint /search sin categoría
+  // Estrategia 1: búsqueda general por vendedor
   try {
-    const url1 = `${ML_API}/sites/MLA/search?seller_id=${ML_SELLER_ID}&limit=50`;
-    const data1 = await mlFetch(url1);
-    if (data1?.results?.length > 0 && typeof data1.results[0] === 'object') {
-      return data1.results;
+    const data = await mlFetch(`${ML_API}/sites/MLA/search?seller_id=${ML_SELLER_ID}&limit=50`);
+    if (data?.results?.length > 0 && typeof data.results[0] === 'object') {
+      return data.results;
     }
-  } catch(e) {}
+  } catch(e) { console.warn('Estrategia 1 falló:', e); }
 
-  // Estrategia 2: endpoint /users/ID/items/search (devuelve IDs, luego buscamos detalle)
+  // Estrategia 2: endpoint items/search (devuelve IDs, luego pedimos detalle)
   try {
-    const url2 = `${ML_API}/users/${ML_SELLER_ID}/items/search?limit=50`;
-    const data2 = await mlFetch(url2);
-    if (data2?.results?.length > 0 && typeof data2.results[0] === 'string') {
-      const ids = data2.results.slice(0, 20).join(',');
+    const data = await mlFetch(`${ML_API}/users/${ML_SELLER_ID}/items/search?limit=50`);
+    if (data?.results?.length > 0) {
+      const ids = data.results.slice(0, 20).join(',');
       const detalle = await mlFetch(`${ML_API}/items?ids=${ids}`);
       if (detalle) {
         return detalle
@@ -1311,9 +1297,8 @@ async function fetchAutos() {
           .filter(Boolean);
       }
     }
-  } catch(e) {}
+  } catch(e) { console.warn('Estrategia 2 falló:', e); }
 
-  console.warn('No se pudo cargar el stock de ML');
   return [];
 }
 
