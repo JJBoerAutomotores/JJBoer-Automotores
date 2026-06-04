@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JJ Boer Automotores – Showroom</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --negro: #111111;
+    --bordo: #7B1C1C;
+    --azul: #1F3A5F;
+    --blanco: #F2F4F7;
+    --bordo-light: #9B2C2C;
+    --azul-light: #2A4D7F;
+    --gris: #888;
+    --gris-light: #e8eaed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--negro);
+    color: var(--blanco);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 70px;
+    background: rgba(17,17,17,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: background 0.3s;
+  }
+
+  .nav-logo img {
+    height: 38px;
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(242,244,247,0.7);
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--blanco); }
+
+  .nav-cta {
+    background: var(--bordo);
+    color: var(--blanco) !important;
+    padding: 8px 20px;
+    border-radius: 3px;
+    font-family: 'Barlow Condensed', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--bordo-light) !important; color: var(--blanco) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 60px 80px;
+    overflow: hidden;
+    background: var(--negro);
+  }
+
+  .hero-slides {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-slide.active { opacity: 1; }
+  .hero-slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(17,17,17,0.85) 0%,
+      rgba(17,17,17,0.5) 50%,
+      rgba(17,17,17,0.15) 100%
+    );
+  }
+
+  /* Slide de placeholder con gradiente si no hay imagen */
+  .hero-slide-placeholder {
+    background: linear-gradient(135deg, #1a1a1a 0%, #1F3A5F 50%, #7B1C1C 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 640px;
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .hero-eyebrow span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--bordo-light);
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: var(--bordo);
+  }
+
+  .hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(48px, 7vw, 96px);
+    font-weight: 900;
+    line-height: 0.92;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--bordo-light);
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(242,244,247,0.65);
+    max-width: 440px;
+    line-height: 1.6;
+    margin-bottom: 36px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bordo);
+    color: var(--blanco);
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border-radius: 3px;
+    transition: background 0.2s, transform 0.15s;
+    border: none; cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--bordo-light); transform: translateY(-1px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--blanco);
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border-radius: 3px;
+    border: 1.5px solid rgba(242,244,247,0.3);
+    transition: border-color 0.2s, transform 0.15s;
+    cursor: pointer;
+  }
+  .btn-secondary:hover { border-color: var(--blanco); transform: translateY(-1px); }
+
+  .hero-dots {
+    position: absolute;
+    bottom: 32px;
+    right: 60px;
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+  }
+  .hero-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: rgba(242,244,247,0.3);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .hero-dot.active { background: var(--bordo); transform: scale(1.4); }
+
+  /* ── DIFERENCIALES ── */
+  .diferencias {
+    background: var(--azul);
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .diferencia-item {
+    padding: 28px 32px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .diferencia-item:last-child { border-right: none; }
+
+  .diferencia-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  .diferencia-text strong {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .diferencia-text span {
+    font-size: 12px;
+    color: rgba(242,244,247,0.65);
+  }
+
+  /* ── STOCK SECTION ── */
+  .stock-section {
+    padding: 80px 60px;
+    background: #0f0f0f;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .section-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--bordo-light);
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .stock-count {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--gris);
+    text-transform: uppercase;
+  }
+
+  /* Filtros */
+  .filtros {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .filtro-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris);
+    margin-right: 4px;
+  }
+
+  .filtro-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(242,244,247,0.6);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .filtro-btn:hover, .filtro-btn.active {
+    background: var(--bordo);
+    border-color: var(--bordo);
+    color: var(--blanco);
+  }
+
+  /* Search */
+  .search-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+    max-width: 400px;
+  }
+  .search-input {
+    flex: 1;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--blanco);
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    padding: 10px 16px;
+    border-radius: 3px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-input::placeholder { color: rgba(242,244,247,0.35); }
+  .search-input:focus { border-color: var(--bordo); }
+
+  /* Grid de autos */
+  .autos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2px;
+  }
+
+  .auto-card {
+    background: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.25s;
+    display: flex;
+    flex-direction: column;
+  }
+  .auto-card:hover { transform: scale(1.01); z-index: 2; }
+  .auto-card:hover .auto-img img { transform: scale(1.05); }
+
+  .auto-img {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: #222;
+  }
+  .auto-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .auto-img-placeholder {
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    color: rgba(255,255,255,0.2);
+    font-size: 48px;
+  }
+
+  .auto-badge {
+    position: absolute;
+    top: 12px; left: 12px;
+    background: var(--bordo);
+    color: var(--blanco);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+
+  .auto-info {
+    padding: 20px 22px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .auto-marca {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--bordo-light);
+    margin-bottom: 4px;
+  }
+
+  .auto-nombre {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 6px;
+    color: var(--blanco);
+  }
+
+  .auto-version {
+    font-size: 12px;
+    color: var(--gris);
+    margin-bottom: 14px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .auto-specs {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .auto-spec {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: rgba(242,244,247,0.55);
+  }
+  .auto-spec-icon { font-size: 13px; }
+
+  .auto-precio {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--blanco);
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .auto-precio small {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gris);
+    margin-left: 2px;
+  }
+
+  .auto-cta {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .btn-wsp {
+    flex: 1;
+    background: #128C7E;
+    color: white;
+    border: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: background 0.2s;
+  }
+  .btn-wsp:hover { background: #075E54; }
+
+  .btn-ver {
+    background: rgba(255,255,255,0.06);
+    color: rgba(242,244,247,0.7);
+    border: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s;
+  }
+  .btn-ver:hover { background: rgba(255,255,255,0.12); color: var(--blanco); }
+
+  /* Loading skeleton */
+  .skeleton-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2px;
+  }
+  .skeleton-card {
+    background: #1a1a1a;
+  }
+  .skeleton-img {
+    aspect-ratio: 4/3;
+    background: linear-gradient(90deg, #222 25%, #2a2a2a 50%, #222 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  .skeleton-body { padding: 20px 22px; }
+  .skeleton-line {
+    height: 10px; border-radius: 4px;
+    background: linear-gradient(90deg, #2a2a2a 25%, #333 50%, #2a2a2a 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    margin-bottom: 10px;
+  }
+  .skeleton-line.w60 { width: 60%; }
+  .skeleton-line.w80 { width: 80%; }
+  .skeleton-line.w40 { width: 40%; }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  /* Error state */
+  .error-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--gris);
+  }
+  .error-state h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: var(--blanco);
+  }
+
+  /* Empty state */
+  .empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--gris);
+  }
+
+  /* ── POR QUÉ JJ BOER ── */
+  .porque-section {
+    padding: 80px 60px;
+    background: var(--negro);
+    position: relative;
+    overflow: hidden;
+  }
+  .porque-section::before {
+    content: '40';
+    position: absolute;
+    right: -20px; top: -40px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 320px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.02);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .porque-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .porque-left {}
+  .porque-left p {
+    font-size: 16px;
+    color: rgba(242,244,247,0.65);
+    line-height: 1.7;
+    margin-top: 20px;
+    max-width: 480px;
+  }
+
+  .porque-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .porque-item {
+    background: #1a1a1a;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .porque-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--bordo);
+  }
+
+  .porque-item-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--bordo-light);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .porque-item h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .porque-item p {
+    font-size: 12px;
+    color: rgba(242,244,247,0.55);
+    line-height: 1.5;
+  }
+
+  /* ── BYD BANNER ── */
+  .byd-banner {
+    padding: 80px 60px;
+    background: linear-gradient(135deg, var(--azul) 0%, #0d1f35 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .byd-banner::after {
+    content: '⚡';
+    position: absolute;
+    right: 60px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 200px;
+    opacity: 0.04;
+    pointer-events: none;
+  }
+
+  .byd-content { position: relative; z-index: 1; }
+  .byd-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    color: rgba(242,244,247,0.7);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 2px;
+    margin-bottom: 16px;
+  }
+  .byd-content h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .byd-content p {
+    font-size: 15px;
+    color: rgba(242,244,247,0.65);
+    max-width: 480px;
+    line-height: 1.6;
+  }
+  .byd-cta {
+    position: relative; z-index: 1;
+    flex-shrink: 0;
+  }
+
+  /* ── CONTACTO ── */
+  .contacto-section {
+    padding: 80px 60px;
+    background: #0f0f0f;
+  }
+
+  .contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .contacto-info {}
+
+  .contacto-dato {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .contacto-dato-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .contacto-dato-text strong {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris);
+    margin-bottom: 4px;
+  }
+  .contacto-dato-text p, .contacto-dato-text a {
+    font-size: 16px;
+    color: var(--blanco);
+    text-decoration: none;
+    line-height: 1.5;
+  }
+  .contacto-dato-text a:hover { color: var(--bordo-light); }
+
+  .mapa-placeholder {
+    background: #1a1a1a;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 320px;
+  }
+  .mapa-placeholder iframe {
+    width: 100%; height: 100%;
+    border: none;
+    filter: grayscale(80%) invert(90%) contrast(85%);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--negro);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 40px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  footer img { height: 32px; }
+
+  .footer-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+  .footer-links a {
+    color: var(--gris);
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--blanco); }
+
+  .footer-copy {
+    font-size: 12px;
+    color: var(--gris);
+  }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(6px);
+    z-index: 200;
+    overflow-y: auto;
+    padding: 40px 20px;
+  }
+  .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+
+  .modal {
+    background: #1a1a1a;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    animation: modalIn 0.3s ease;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 20px;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+  .modal-close:hover { background: var(--bordo); }
+
+  .modal-img {
+    aspect-ratio: 16/9;
+    background: #222;
+    overflow: hidden;
+  }
+  .modal-img img { width: 100%; height: 100%; object-fit: cover; }
+
+  .modal-body { padding: 32px; }
+
+  .modal-marca {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--bordo-light); margin-bottom: 6px;
+  }
+  .modal-titulo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 36px; font-weight: 900;
+    text-transform: uppercase; line-height: 1;
+    margin-bottom: 4px;
+  }
+  .modal-version {
+    font-size: 13px; color: var(--gris);
+    text-transform: uppercase; letter-spacing: 0.5px;
+    margin-bottom: 24px;
+  }
+
+  .modal-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-bottom: 28px;
+  }
+  .modal-spec-item {
+    background: rgba(255,255,255,0.04);
+    padding: 14px 16px;
+    text-align: center;
+  }
+  .modal-spec-label {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--gris); margin-bottom: 4px;
+  }
+  .modal-spec-val {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px; font-weight: 700;
+    color: var(--blanco);
+  }
+
+  .modal-precio-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .modal-precio {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 40px; font-weight: 900;
+    color: var(--blanco);
+  }
+
+  .modal-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 0 24px 60px; }
+    .diferencias { grid-template-columns: repeat(2, 1fr); }
+    .stock-section { padding: 48px 20px; }
+    .porque-grid { grid-template-columns: 1fr; gap: 40px; }
+    .porque-items { grid-template-columns: 1fr 1fr; }
+    .byd-banner { padding: 48px 24px; }
+    .contacto-section { padding: 48px 20px; }
+    .contacto-grid { grid-template-columns: 1fr; }
+    footer { padding: 32px 20px; flex-direction: column; align-items: flex-start; }
+    .modal-specs-grid { grid-template-columns: repeat(2, 1fr); }
+    .porque-section { padding: 48px 20px; }
+  }
+
+  @media (max-width: 600px) {
+    .diferencias { grid-template-columns: 1fr 1fr; }
+    .diferencia-item { padding: 18px; }
+    .porque-items { grid-template-columns: 1fr; }
+    .autos-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <!-- Logo SVG inline aproximado de JJ Boer -->
+    <svg height="36" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="46" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="52" fill="#7B1C1C" font-style="italic">JJ</text>
+      <rect x="72" y="4" width="148" height="52" fill="#1F3A5F" rx="2"/>
+      <text x="80" y="44" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="38" fill="#F2F4F7" letter-spacing="2">BOER</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#stock">Stock</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#byd">BYD</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="https://wa.me/5491100000000" class="nav-cta" target="_blank">💬 WhatsApp</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide hero-slide-placeholder active"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span>40 años en el rubro</span></div>
+    <h1>Tu próximo auto<em>te espera.</em></h1>
+    <p class="hero-sub">Usados seleccionados, 0 KM y eléctricos BYD. Honestidad y transparencia desde 1985 en Villa Luro.</p>
+    <div class="hero-actions">
+      <a href="#stock" class="btn-primary">Ver stock completo →</a>
+      <a href="https://wa.me/5491100000000" class="btn-secondary" target="_blank">💬 Consultar ahora</a>
+    </div>
+  </div>
+
+  <div class="hero-dots" id="heroDots"></div>
+</section>
+
+<!-- DIFERENCIALES -->
+<div class="diferencias">
+  <div class="diferencia-item">
+    <span class="diferencia-icon">🛡️</span>
+    <div class="diferencia-text">
+      <strong>Usados seleccionados</strong>
+      <span>Chequeados antes de la venta</span>
+    </div>
+  </div>
+  <div class="diferencia-item">
+    <span class="diferencia-icon">📋</span>
+    <div class="diferencia-text">
+      <strong>Transferencia al costo</strong>
+      <span>Sin gastos ocultos</span>
+    </div>
+  </div>
+  <div class="diferencia-item">
+    <span class="diferencia-icon">🔒</span>
+    <div class="diferencia-text">
+      <strong>Descuento La Caja</strong>
+      <span>Seguro con beneficio exclusivo</span>
+    </div>
+  </div>
+  <div class="diferencia-item">
+    <span class="diferencia-icon">⚡</span>
+    <div class="diferencia-text">
+      <strong>BYD Eléctricos</strong>
+      <span>Próximamente en stock</span>
+    </div>
+  </div>
+</div>
+
+<!-- STOCK -->
+<section class="stock-section" id="stock">
+  <div class="section-header">
+    <div>
+      <p class="section-eyebrow">Stock actualizado</p>
+      <h2 class="section-title">Todos los autos</h2>
+    </div>
+    <span class="stock-count" id="stockCount">Cargando...</span>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" class="search-input" id="searchInput" placeholder="Buscar por marca o modelo...">
+  </div>
+
+  <div class="filtros" id="filtrosMarca">
+    <span class="filtro-label">Marca:</span>
+    <button class="filtro-btn active" data-marca="todos">Todos</button>
+  </div>
+
+  <div class="filtros" id="filtrosCombustible">
+    <span class="filtro-label">Combustible:</span>
+    <button class="filtro-btn active" data-combustible="todos">Todos</button>
+    <button class="filtro-btn" data-combustible="Nafta">Nafta</button>
+    <button class="filtro-btn" data-combustible="Diesel">Diesel</button>
+    <button class="filtro-btn" data-combustible="Eléctrico">Eléctrico</button>
+    <button class="filtro-btn" data-combustible="GNC">GNC</button>
+  </div>
+
+  <div class="autos-grid" id="autosGrid">
+    <!-- Skeletons iniciales -->
+    ${Array(6).fill(0).map(() => `
+    <div class="skeleton-card">
+      <div class="skeleton-img"></div>
+      <div class="skeleton-body">
+        <div class="skeleton-line w40"></div>
+        <div class="skeleton-line w80"></div>
+        <div class="skeleton-line w60"></div>
+      </div>
+    </div>`).join('')}
+  </div>
+</section>
+
+<!-- POR QUÉ JJ BOER -->
+<section class="porque-section" id="nosotros">
+  <div class="porque-grid">
+    <div class="porque-left">
+      <p class="section-eyebrow">¿Por qué elegirnos?</p>
+      <h2 class="section-title">El concesionario<br>del barrio.</h2>
+      <p>JJ Boer lleva 40 años haciendo lo que siempre prometió: vender autos con honestidad. Sin letra chica, sin sorpresas. Con la experiencia de siempre y la tecnología de hoy.</p>
+    </div>
+    <div class="porque-items">
+      <div class="porque-item">
+        <p class="porque-item-num">01</p>
+        <h4>40 Años de trayectoria</h4>
+        <p>Desde 1985 en Villa Luro. La experiencia que se convierte en confianza.</p>
+      </div>
+      <div class="porque-item">
+        <p class="porque-item-num">02</p>
+        <h4>Transparencia total</h4>
+        <p>Precios claros, proceso explicado, sin sorpresas al momento de la firma.</p>
+      </div>
+      <div class="porque-item">
+        <p class="porque-item-num">03</p>
+        <h4>Transferencia al costo</h4>
+        <p>Sin gastos ocultos. La transferencia incluida en el precio.</p>
+      </div>
+      <div class="porque-item">
+        <p class="porque-item-num">04</p>
+        <h4>Alianza La Caja</h4>
+        <p>Descuento exclusivo en seguro del auto desde el día uno.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BYD BANNER -->
+<section class="byd-banner" id="byd">
+  <div class="byd-content">
+    <span class="byd-tag">⚡ Próximamente</span>
+    <h2>Movilidad eléctrica<br>en Villa Luro.</h2>
+    <p>BYD llega a JJ Boer. Los autos eléctricos más vendidos del mundo, ahora en tu barrio. Anotate para ser el primero en enterarte.</p>
+  </div>
+  <div class="byd-cta">
+    <a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20los%20autos%20BYD%20el%C3%A9ctricos" class="btn-primary" target="_blank">
+      ⚡ Me interesa BYD
+    </a>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto-section" id="contacto">
+  <div class="section-header">
+    <div>
+      <p class="section-eyebrow">Estamos para vos</p>
+      <h2 class="section-title">Visitanos</h2>
+    </div>
+  </div>
+
+  <div class="contacto-grid">
+    <div class="contacto-info">
+      <div class="contacto-dato">
+        <span class="contacto-dato-icon">📍</span>
+        <div class="contacto-dato-text">
+          <strong>Dirección</strong>
+          <p>Villa Luro, Buenos Aires</p>
+        </div>
+      </div>
+      <div class="contacto-dato">
+        <span class="contacto-dato-icon">💬</span>
+        <div class="contacto-dato-text">
+          <strong>WhatsApp</strong>
+          <a href="https://wa.me/5491100000000" target="_blank">+54 9 11 0000-0000</a>
+        </div>
+      </div>
+      <div class="contacto-dato">
+        <span class="contacto-dato-icon">🕐</span>
+        <div class="contacto-dato-text">
+          <strong>Horarios</strong>
+          <p>Lun a Vie: 09:00 – 19:00<br>Sáb: 09:00 – 14:00</p>
+        </div>
+      </div>
+      <div class="contacto-dato">
+        <span class="contacto-dato-icon">📱</span>
+        <div class="contacto-dato-text">
+          <strong>Instagram</strong>
+          <a href="https://instagram.com/jjboerautomotores" target="_blank">@jjboerautomotores</a>
+        </div>
+      </div>
+      <a href="https://wa.me/5491100000000" class="btn-primary" target="_blank" style="max-width: 240px; margin-top: 8px;">
+        💬 Escribinos ahora
+      </a>
+    </div>
+    <div class="mapa-placeholder">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.2!2d-58.502!3d-34.626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sVilla%20Luro%2C%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1620000000000!5m2!1ses!2sar"
+        allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <svg height="30" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <text x="0" y="46" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="52" fill="#7B1C1C" font-style="italic">JJ</text>
+    <rect x="72" y="4" width="148" height="52" fill="#1F3A5F" rx="2"/>
+    <text x="80" y="44" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="38" fill="#F2F4F7" letter-spacing="2">BOER</text>
+  </svg>
+  <ul class="footer-links">
+    <li><a href="#stock">Stock</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="https://instagram.com/jjboerautomotores" target="_blank">Instagram</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 JJ Boer Automotores · Villa Luro, Buenos Aires</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-img"><img id="modalImg" src="" alt=""></div>
+    <div class="modal-body">
+      <p class="modal-marca" id="modalMarca"></p>
+      <h2 class="modal-titulo" id="modalTitulo"></h2>
+      <p class="modal-version" id="modalVersion"></p>
+      <div class="modal-specs-grid" id="modalSpecs"></div>
+      <div class="modal-precio-row">
+        <div class="modal-precio" id="modalPrecio"></div>
+        <div class="modal-actions" id="modalActions"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─────────────────────────────────────────────
+// CONFIG
+// ─────────────────────────────────────────────
+const ML_SELLER_ID = '62131820';
+const ML_API = 'https://api.mercadolibre.com';
+const WA_NUMBER = '5491100000000'; // ← CAMBIAR por número real de JJ Boer
+
+// ─────────────────────────────────────────────
+// HERO SLIDESHOW
+// ─────────────────────────────────────────────
+let heroImages = [];
+let heroIdx = 0;
+let heroInterval = null;
+
+function initHero(images) {
+  if (!images.length) return;
+  heroImages = images;
+  const slidesEl = document.getElementById('heroSlides');
+  const dotsEl = document.getElementById('heroDots');
+  slidesEl.innerHTML = '';
+  dotsEl.innerHTML = '';
+
+  images.forEach((url, i) => {
+    const slide = document.createElement('div');
+    slide.className = 'hero-slide' + (i === 0 ? ' active' : '');
+    slide.style.backgroundImage = `url(${url})`;
+    slidesEl.appendChild(slide);
+
+    const dot = document.createElement('div');
+    dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsEl.appendChild(dot);
+  });
+
+  if (images.length > 1) {
+    heroInterval = setInterval(() => goToSlide((heroIdx + 1) % heroImages.length), 5000);
+  }
+}
+
+function goToSlide(n) {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  slides.forEach(s => s.classList.remove('active'));
+  dots.forEach(d => d.classList.remove('active'));
+  heroIdx = n;
+  if (slides[n]) slides[n].classList.add('active');
+  if (dots[n]) dots[n].classList.add('active');
+}
+
+// ─────────────────────────────────────────────
+// FETCH ML
+// ─────────────────────────────────────────────
+let todosLosAutos = [];
+let filtroMarcaActivo = 'todos';
+let filtroCombActivo = 'todos';
+let searchQuery = '';
+
+async function fetchAutos() {
+  try {
+    // Buscar publicaciones activas del vendedor en categoría autos
+    const res = await fetch(
+      `${ML_API}/sites/MLA/search?seller_id=${ML_SELLER_ID}&category=MLA1744&limit=50&status=active`
+    );
+    if (!res.ok) throw new Error('API error');
+    const data = await res.json();
+    return data.results || [];
+  } catch(e) {
+    console.warn('Error fetching ML:', e);
+    return [];
+  }
+}
+
+async function fetchItemDetail(id) {
+  try {
+    const res = await fetch(`${ML_API}/items/${id}`);
+    if (!res.ok) throw new Error();
+    return await res.json();
+  } catch(e) {
+    return null;
+  }
+}
+
+function parsearPrecio(item) {
+  if (!item.price) return 'Consultar';
+  const currency = item.currency_id === 'USD' ? 'U$D' : '$';
+  const num = item.price.toLocaleString('es-AR');
+  return `${currency} ${num}`;
+}
+
+function extraerAtributo(item, id) {
+  if (!item.attributes) return null;
+  const attr = item.attributes.find(a => a.id === id);
+  return attr ? attr.value_name : null;
+}
+
+function buildCard(item) {
+  const titulo = item.title || '';
+  // Separar marca/modelo
+  const partes = titulo.split(' ');
+  const marca = partes[0] || '';
+  const modelo = partes.slice(1).join(' ') || titulo;
+
+  const precio = parsearPrecio(item);
+  const img = item.thumbnail
+    ? item.thumbnail.replace('-I.jpg', '-O.jpg').replace('http://', 'https://')
+    : null;
+
+  const anio = extraerAtributo(item, 'VEHICLE_YEAR') || '';
+  const km = extraerAtributo(item, 'KILOMETERS') || '';
+  const comb = extraerAtributo(item, 'FUEL_TYPE') || '';
+  const trans = extraerAtributo(item, 'TRANSMISSION') || '';
+
+  const card = document.createElement('div');
+  card.className = 'auto-card';
+  card.dataset.id = item.id;
+  card.dataset.marca = marca.toLowerCase();
+  card.dataset.combustible = comb;
+  card.dataset.titulo = titulo.toLowerCase();
+
+  card.innerHTML = `
+    <div class="auto-img">
+      ${img
+        ? `<img src="${img}" alt="${titulo}" loading="lazy">`
+        : `<div class="auto-img-placeholder">🚗</div>`
+      }
+      <span class="auto-badge">En stock</span>
+    </div>
+    <div class="auto-info">
+      <p class="auto-marca">${marca}</p>
+      <h3 class="auto-nombre">${modelo}</h3>
+      <p class="auto-version">${[anio, comb, trans].filter(Boolean).join(' · ')}</p>
+      <div class="auto-specs">
+        ${anio ? `<span class="auto-spec"><span class="auto-spec-icon">📅</span>${anio}</span>` : ''}
+        ${km ? `<span class="auto-spec"><span class="auto-spec-icon">🛣️</span>${Number(km).toLocaleString('es-AR')} km</span>` : ''}
+      </div>
+      <div class="auto-precio">${precio}</div>
+      <div class="auto-cta">
+        <a class="btn-wsp" href="https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(`Hola! Me interesa el ${titulo}. ¿Podés darme más info?`)}" target="_blank">
+          💬 Consultar
+        </a>
+        <button class="btn-ver" data-id="${item.id}">Ver detalle</button>
+      </div>
+    </div>
+  `;
+
+  card.querySelector('.btn-ver').addEventListener('click', () => abrirModal(item));
+  return card;
+}
+
+function renderAutos() {
+  const grid = document.getElementById('autosGrid');
+  const cards = [...document.querySelectorAll('.auto-card')];
+  let visibles = 0;
+
+  cards.forEach(card => {
+    const marcaOk = filtroMarcaActivo === 'todos' || card.dataset.marca === filtroMarcaActivo;
+    const combOk = filtroCombActivo === 'todos' ||
+      (card.dataset.combustible || '').toLowerCase() === filtroCombActivo.toLowerCase();
+    const searchOk = !searchQuery || card.dataset.titulo.includes(searchQuery.toLowerCase());
+
+    const show = marcaOk && combOk && searchOk;
+    card.style.display = show ? '' : 'none';
+    if (show) visibles++;
+  });
+
+  document.getElementById('stockCount').textContent =
+    `${visibles} auto${visibles !== 1 ? 's' : ''} disponible${visibles !== 1 ? 's' : ''}`;
+
+  // Mostrar mensaje si no hay resultados
+  const empty = grid.querySelector('.empty-state');
+  if (empty) empty.remove();
+  if (visibles === 0 && todosLosAutos.length > 0) {
+    const msg = document.createElement('div');
+    msg.className = 'empty-state';
+    msg.innerHTML = '<h3>Sin resultados</h3><p>Probá con otros filtros o escribinos por WhatsApp</p>';
+    grid.appendChild(msg);
+  }
+}
+
+function buildFiltrosMarca(autos) {
+  const marcas = [...new Set(autos.map(a => a.title.split(' ')[0]))].sort();
+  const cont = document.getElementById('filtrosMarca');
+  cont.innerHTML = '<span class="filtro-label">Marca:</span>';
+
+  const btnTodos = document.createElement('button');
+  btnTodos.className = 'filtro-btn active';
+  btnTodos.dataset.marca = 'todos';
+  btnTodos.textContent = 'Todos';
+  btnTodos.addEventListener('click', () => setFiltroMarca('todos', btnTodos));
+  cont.appendChild(btnTodos);
+
+  marcas.forEach(m => {
+    const btn = document.createElement('button');
+    btn.className = 'filtro-btn';
+    btn.dataset.marca = m.toLowerCase();
+    btn.textContent = m;
+    btn.addEventListener('click', () => setFiltroMarca(m.toLowerCase(), btn));
+    cont.appendChild(btn);
+  });
+}
+
+function setFiltroMarca(val, btn) {
+  filtroMarcaActivo = val;
+  document.querySelectorAll('#filtrosMarca .filtro-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderAutos();
+}
+
+function setFiltroComb(val, btn) {
+  filtroCombActivo = val;
+  document.querySelectorAll('#filtrosCombustible .filtro-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderAutos();
+}
+
+// ─────────────────────────────────────────────
+// MODAL
+// ─────────────────────────────────────────────
+function abrirModal(item) {
+  const titulo = item.title || '';
+  const partes = titulo.split(' ');
+  const marca = partes[0] || '';
+  const modelo = partes.slice(1).join(' ');
+
+  const precio = parsearPrecio(item);
+  const img = item.thumbnail
+    ? item.thumbnail.replace('-I.jpg', '-O.jpg').replace('http://', 'https://')
+    : '';
+
+  const anio = extraerAtributo(item, 'VEHICLE_YEAR') || '–';
+  const km = extraerAtributo(item, 'KILOMETERS');
+  const kmStr = km ? Number(km).toLocaleString('es-AR') + ' km' : '–';
+  const comb = extraerAtributo(item, 'FUEL_TYPE') || '–';
+  const trans = extraerAtributo(item, 'TRANSMISSION') || '–';
+  const color = extraerAtributo(item, 'COLOR') || '–';
+  const puertas = extraerAtributo(item, 'DOORS') || '–';
+
+  document.getElementById('modalImg').src = img;
+  document.getElementById('modalImg').alt = titulo;
+  document.getElementById('modalMarca').textContent = marca;
+  document.getElementById('modalTitulo').textContent = modelo;
+  document.getElementById('modalVersion').textContent = titulo;
+  document.getElementById('modalPrecio').textContent = precio;
+
+  document.getElementById('modalSpecs').innerHTML = `
+    <div class="modal-spec-item"><p class="modal-spec-label">Año</p><p class="modal-spec-val">${anio}</p></div>
+    <div class="modal-spec-item"><p class="modal-spec-label">Kilómetros</p><p class="modal-spec-val">${kmStr}</p></div>
+    <div class="modal-spec-item"><p class="modal-spec-label">Combustible</p><p class="modal-spec-val">${comb}</p></div>
+    <div class="modal-spec-item"><p class="modal-spec-label">Transmisión</p><p class="modal-spec-val">${trans}</p></div>
+    <div class="modal-spec-item"><p class="modal-spec-label">Color</p><p class="modal-spec-val">${color}</p></div>
+    <div class="modal-spec-item"><p class="modal-spec-label">Puertas</p><p class="modal-spec-val">${puertas}</p></div>
+  `;
+
+  document.getElementById('modalActions').innerHTML = `
+    <a class="btn-wsp" href="https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(`Hola! Me interesa el ${titulo} (precio: ${precio}). ¿Podés darme más info?`)}" target="_blank">
+      💬 Consultar por WhatsApp
+    </a>
+    <a class="btn-ver" href="${item.permalink}" target="_blank">Ver en MercadoLibre</a>
+  `;
+
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function cerrarModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('modalClose').addEventListener('click', cerrarModal);
+document.getElementById('modalOverlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('modalOverlay')) cerrarModal();
+});
+
+// ─────────────────────────────────────────────
+// FILTROS COMBUSTIBLE (event delegation)
+// ─────────────────────────────────────────────
+document.getElementById('filtrosCombustible').addEventListener('click', e => {
+  if (e.target.classList.contains('filtro-btn')) {
+    setFiltroComb(e.target.dataset.combustible, e.target);
+  }
+});
+
+// SEARCH
+document.getElementById('searchInput').addEventListener('input', e => {
+  searchQuery = e.target.value.trim();
+  renderAutos();
+});
+
+// ─────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────
+async function init() {
+  const autos = await fetchAutos();
+
+  const grid = document.getElementById('autosGrid');
+  grid.innerHTML = ''; // Limpiar skeletons
+
+  if (!autos.length) {
+    grid.innerHTML = `
+      <div class="error-state" style="grid-column:1/-1">
+        <h3>No se pudo cargar el stock</h3>
+        <p>Puede que la API de MercadoLibre no esté disponible en este momento.<br>
+        Escribinos por WhatsApp para consultar disponibilidad.</p>
+        <br>
+        <a href="https://wa.me/${WA_NUMBER}" class="btn-primary" target="_blank" style="display:inline-flex">
+          💬 Consultar por WhatsApp
+        </a>
+      </div>
+    `;
+    document.getElementById('stockCount').textContent = '–';
+    return;
+  }
+
+  todosLosAutos = autos;
+  buildFiltrosMarca(autos);
+
+  // Recopilar imágenes para el hero (las primeras 5 con buena foto)
+  const heroImgs = autos
+    .filter(a => a.thumbnail)
+    .slice(0, 5)
+    .map(a => a.thumbnail.replace('-I.jpg', '-O.jpg').replace('http://', 'https://'));
+  if (heroImgs.length) initHero(heroImgs);
+
+  autos.forEach(auto => {
+    const card = buildCard(auto);
+    grid.appendChild(card);
+  });
+
+  document.getElementById('stockCount').textContent =
+    `${autos.length} auto${autos.length !== 1 ? 's' : ''} disponible${autos.length !== 1 ? 's' : ''}`;
+}
+
+init();
+</script>
+</body>
+</html>
