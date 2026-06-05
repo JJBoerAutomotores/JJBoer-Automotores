@@ -114,16 +114,18 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(
-      to right,
-      rgba(17,17,17,0.85) 0%,
-      rgba(17,17,17,0.5) 50%,
-      rgba(17,17,17,0.15) 100%
+      135deg,
+      rgba(31,58,95,0.82) 0%,
+      rgba(17,17,17,0.65) 40%,
+      rgba(123,28,28,0.75) 100%
     );
   }
 
   /* Slide de placeholder con gradiente si no hay imagen */
   .hero-slide-placeholder {
-    background: linear-gradient(135deg, #1a1a1a 0%, #1F3A5F 50%, #7B1C1C 100%);
+    background-image: url('/local.png');
+    background-size: cover;
+    background-position: center;
   }
 
   .hero-content {
