@@ -1216,9 +1216,8 @@
 // ─────────────────────────────────────────────
 // CONFIG
 // ─────────────────────────────────────────────
-const ML_SELLER_ID = '62131820';
-const ML_API = 'https://api.mercadolibre.com';
-const WA_NUMBER = '5491168331999'; // ← CAMBIAR por número real de JJ Boer
+const SHEET_ID = '1DnnoaqKxZWXCk_66Gf1VGAJQ0xrun49jrPzUam3AAQk';
+const WA_NUMBER = '5491168331999';
 
 // ─────────────────────────────────────────────
 // HERO SLIDESHOW
@@ -1234,19 +1233,16 @@ function initHero(images) {
   const dotsEl = document.getElementById('heroDots');
   slidesEl.innerHTML = '';
   dotsEl.innerHTML = '';
-
   images.forEach((url, i) => {
     const slide = document.createElement('div');
     slide.className = 'hero-slide' + (i === 0 ? ' active' : '');
     slide.style.backgroundImage = `url(${url})`;
     slidesEl.appendChild(slide);
-
     const dot = document.createElement('div');
     dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
     dot.addEventListener('click', () => goToSlide(i));
     dotsEl.appendChild(dot);
   });
-
   if (images.length > 1) {
     heroInterval = setInterval(() => goToSlide((heroIdx + 1) % heroImages.length), 5000);
   }
@@ -1263,114 +1259,75 @@ function goToSlide(n) {
 }
 
 // ─────────────────────────────────────────────
-// FETCH ML
+// GOOGLE SHEETS
 // ─────────────────────────────────────────────
 let todosLosAutos = [];
 let filtroMarcaActivo = 'todos';
 let filtroCombActivo = 'todos';
 let searchQuery = '';
 
-async function mlFetch(mlUrl) {
-  // Usa la función serverless de Vercel como proxy
-  const res = await fetch('/api/ml?url=' + encodeURIComponent(mlUrl));
-  if (!res.ok) throw new Error('API error ' + res.status);
-  return await res.json();
-}
-
 async function fetchAutos() {
-  // Estrategia 1: búsqueda general por vendedor
-  try {
-    const data = await mlFetch(`${ML_API}/sites/MLA/search?seller_id=${ML_SELLER_ID}&limit=50`);
-    if (data?.results?.length > 0 && typeof data.results[0] === 'object') {
-      return data.results;
-    }
-  } catch(e) { console.warn('Estrategia 1 falló:', e); }
-
-  // Estrategia 2: endpoint items/search (devuelve IDs, luego pedimos detalle)
-  try {
-    const data = await mlFetch(`${ML_API}/users/${ML_SELLER_ID}/items/search?limit=50`);
-    if (data?.results?.length > 0) {
-      const ids = data.results.slice(0, 20).join(',');
-      const detalle = await mlFetch(`${ML_API}/items?ids=${ids}`);
-      if (detalle) {
-        return detalle
-          .filter(d => d.code === 200)
-          .map(d => d.body)
-          .filter(Boolean);
-      }
-    }
-  } catch(e) { console.warn('Estrategia 2 falló:', e); }
-
-  return [];
-}
-
-async function fetchItemDetail(id) {
-  try {
-    return await mlFetch(`${ML_API}/items/${id}`);
-  } catch(e) {
-    return null;
-  }
+  
+  const sheetUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
+  const res = await fetch(`/api/ml?url=${encodeURIComponent(sheetUrl)}`);
+  const text = await res.text();
+  const json = JSON.parse(text.match(/google\.visualization\.Query\.setResponse\(([\s\S]*)\)/)[1]);
+  const cols = json.table.cols.map(c => c.label.toLowerCase().trim());
+  return json.table.rows
+    .filter(row => row.c && row.c[0] && row.c[0].v)
+    .map(row => {
+      const obj = {};
+      cols.forEach((col, i) => {
+        obj[col] = row.c[i] ? (row.c[i].v !== null ? String(row.c[i].v).trim() : '') : '';
+      });
+      return obj;
+    });
 }
 
 function parsearPrecio(item) {
-  if (!item.price) return 'Consultar';
-  const currency = item.currency_id === 'USD' ? 'U$D' : '$';
-  const num = item.price.toLocaleString('es-AR');
-  return `${currency} ${num}`;
-}
-
-function extraerAtributo(item, id) {
-  if (!item.attributes) return null;
-  const attr = item.attributes.find(a => a.id === id);
-  return attr ? attr.value_name : null;
+  if (!item.precio) return 'Consultar';
+  const moneda = (item.moneda || 'ARS').toUpperCase();
+  const simbolo = moneda === 'USD' ? 'U$D' : '$';
+  const num = Number(item.precio).toLocaleString('es-AR');
+  return `${simbolo} ${num}`;
 }
 
 function buildCard(item) {
-  const titulo = item.title || '';
-  // Separar marca/modelo
-  const partes = titulo.split(' ');
-  const marca = partes[0] || '';
-  const modelo = partes.slice(1).join(' ') || titulo;
-
+  const marca = item.marca || '';
+  const modelo = item.modelo || '';
+  const version = item.version || '';
+  const titulo = [marca, modelo, version].filter(Boolean).join(' ');
   const precio = parsearPrecio(item);
-  const img = item.thumbnail
-    ? item.thumbnail.replace('-I.jpg', '-O.jpg').replace('http://', 'https://')
-    : null;
-
-  const anio = extraerAtributo(item, 'VEHICLE_YEAR') || '';
-  const km = extraerAtributo(item, 'KILOMETERS') || '';
-  const comb = extraerAtributo(item, 'FUEL_TYPE') || '';
-  const trans = extraerAtributo(item, 'TRANSMISSION') || '';
+  const img = item.foto || null;
+  const anio = item['año'] || item.anio || '';
+  const km = item.km || '';
+  const comb = item.combustible || '';
+  const trans = item.transmision || '';
+  const waTexto = item.whatsapp_texto || `Hola! Me interesa el ${titulo}. ¿Podés darme más info?`;
 
   const card = document.createElement('div');
   card.className = 'auto-card';
-  card.dataset.id = item.id;
   card.dataset.marca = marca.toLowerCase();
   card.dataset.combustible = comb;
   card.dataset.titulo = titulo.toLowerCase();
 
   card.innerHTML = `
     <div class="auto-img">
-      ${img
-        ? `<img src="${img}" alt="${titulo}" loading="lazy">`
-        : `<div class="auto-img-placeholder">🚗</div>`
-      }
+      ${img ? `<img src="${img}" alt="${titulo}" loading="lazy">` : `<div class="auto-img-placeholder">🚗</div>`}
       <span class="auto-badge">En stock</span>
     </div>
     <div class="auto-info">
       <p class="auto-marca">${marca}</p>
       <h3 class="auto-nombre">${modelo}</h3>
-      <p class="auto-version">${[anio, comb, trans].filter(Boolean).join(' · ')}</p>
+      <p class="auto-version">${[anio, version, comb, trans].filter(Boolean).join(' · ')}</p>
       <div class="auto-specs">
         ${anio ? `<span class="auto-spec"><span class="auto-spec-icon">📅</span>${anio}</span>` : ''}
         ${km ? `<span class="auto-spec"><span class="auto-spec-icon">🛣️</span>${Number(km).toLocaleString('es-AR')} km</span>` : ''}
       </div>
       <div class="auto-precio">${precio}</div>
       <div class="auto-cta">
-        <a class="btn-wsp" href="https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(`Hola! Me interesa el ${titulo}. ¿Podés darme más info?`)}" target="_blank">
-          💬 Consultar
-        </a>
-        <button class="btn-ver" data-id="${item.id}">Ver detalle</button>
+        <a class="btn-wsp" href="https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waTexto)}" target="_blank">💬 Consultar</a>
+        <button class="btn-ver">Ver detalle</button>
       </div>
     </div>
   `;
@@ -1383,22 +1340,16 @@ function renderAutos() {
   const grid = document.getElementById('autosGrid');
   const cards = [...document.querySelectorAll('.auto-card')];
   let visibles = 0;
-
   cards.forEach(card => {
     const marcaOk = filtroMarcaActivo === 'todos' || card.dataset.marca === filtroMarcaActivo;
-    const combOk = filtroCombActivo === 'todos' ||
-      (card.dataset.combustible || '').toLowerCase() === filtroCombActivo.toLowerCase();
+    const combOk = filtroCombActivo === 'todos' || (card.dataset.combustible || '').toLowerCase() === filtroCombActivo.toLowerCase();
     const searchOk = !searchQuery || card.dataset.titulo.includes(searchQuery.toLowerCase());
-
     const show = marcaOk && combOk && searchOk;
     card.style.display = show ? '' : 'none';
     if (show) visibles++;
   });
-
   document.getElementById('stockCount').textContent =
     `${visibles} auto${visibles !== 1 ? 's' : ''} disponible${visibles !== 1 ? 's' : ''}`;
-
-  // Mostrar mensaje si no hay resultados
   const empty = grid.querySelector('.empty-state');
   if (empty) empty.remove();
   if (visibles === 0 && todosLosAutos.length > 0) {
@@ -1410,17 +1361,15 @@ function renderAutos() {
 }
 
 function buildFiltrosMarca(autos) {
-  const marcas = [...new Set(autos.map(a => a.title.split(' ')[0]))].sort();
+  const marcas = [...new Set(autos.map(a => a.marca).filter(Boolean))].sort();
   const cont = document.getElementById('filtrosMarca');
   cont.innerHTML = '<span class="filtro-label">Marca:</span>';
-
   const btnTodos = document.createElement('button');
   btnTodos.className = 'filtro-btn active';
   btnTodos.dataset.marca = 'todos';
   btnTodos.textContent = 'Todos';
   btnTodos.addEventListener('click', () => setFiltroMarca('todos', btnTodos));
   cont.appendChild(btnTodos);
-
   marcas.forEach(m => {
     const btn = document.createElement('button');
     btn.className = 'filtro-btn';
@@ -1449,45 +1398,36 @@ function setFiltroComb(val, btn) {
 // MODAL
 // ─────────────────────────────────────────────
 function abrirModal(item) {
-  const titulo = item.title || '';
-  const partes = titulo.split(' ');
-  const marca = partes[0] || '';
-  const modelo = partes.slice(1).join(' ');
-
+  const marca = item.marca || '';
+  const modelo = item.modelo || '';
+  const version = item.version || '';
+  const titulo = [marca, modelo, version].filter(Boolean).join(' ');
   const precio = parsearPrecio(item);
-  const img = item.thumbnail
-    ? item.thumbnail.replace('-I.jpg', '-O.jpg').replace('http://', 'https://')
-    : '';
-
-  const anio = extraerAtributo(item, 'VEHICLE_YEAR') || '–';
-  const km = extraerAtributo(item, 'KILOMETERS');
-  const kmStr = km ? Number(km).toLocaleString('es-AR') + ' km' : '–';
-  const comb = extraerAtributo(item, 'FUEL_TYPE') || '–';
-  const trans = extraerAtributo(item, 'TRANSMISSION') || '–';
-  const color = extraerAtributo(item, 'COLOR') || '–';
-  const puertas = extraerAtributo(item, 'DOORS') || '–';
+  const img = item.foto || '';
+  const anio = item['año'] || item.anio || '–';
+  const km = item.km ? Number(item.km).toLocaleString('es-AR') + ' km' : '–';
+  const comb = item.combustible || '–';
+  const trans = item.transmision || '–';
+  const waTexto = item.whatsapp_texto || `Hola! Me interesa el ${titulo} (precio: ${precio}). ¿Podés darme más info?`;
 
   document.getElementById('modalImg').src = img;
   document.getElementById('modalImg').alt = titulo;
   document.getElementById('modalMarca').textContent = marca;
-  document.getElementById('modalTitulo').textContent = modelo;
+  document.getElementById('modalTitulo').textContent = [modelo, version].filter(Boolean).join(' ');
   document.getElementById('modalVersion').textContent = titulo;
   document.getElementById('modalPrecio').textContent = precio;
 
   document.getElementById('modalSpecs').innerHTML = `
     <div class="modal-spec-item"><p class="modal-spec-label">Año</p><p class="modal-spec-val">${anio}</p></div>
-    <div class="modal-spec-item"><p class="modal-spec-label">Kilómetros</p><p class="modal-spec-val">${kmStr}</p></div>
+    <div class="modal-spec-item"><p class="modal-spec-label">Kilómetros</p><p class="modal-spec-val">${km}</p></div>
     <div class="modal-spec-item"><p class="modal-spec-label">Combustible</p><p class="modal-spec-val">${comb}</p></div>
     <div class="modal-spec-item"><p class="modal-spec-label">Transmisión</p><p class="modal-spec-val">${trans}</p></div>
-    <div class="modal-spec-item"><p class="modal-spec-label">Color</p><p class="modal-spec-val">${color}</p></div>
-    <div class="modal-spec-item"><p class="modal-spec-label">Puertas</p><p class="modal-spec-val">${puertas}</p></div>
   `;
 
   document.getElementById('modalActions').innerHTML = `
-    <a class="btn-wsp" href="https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(`Hola! Me interesa el ${titulo} (precio: ${precio}). ¿Podés darme más info?`)}" target="_blank">
+    <a class="btn-wsp" href="https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waTexto)}" target="_blank">
       💬 Consultar por WhatsApp
     </a>
-    <a class="btn-ver" href="${item.permalink}" target="_blank">Ver en MercadoLibre</a>
   `;
 
   document.getElementById('modalOverlay').classList.add('open');
@@ -1504,16 +1444,12 @@ document.getElementById('modalOverlay').addEventListener('click', e => {
   if (e.target === document.getElementById('modalOverlay')) cerrarModal();
 });
 
-// ─────────────────────────────────────────────
-// FILTROS COMBUSTIBLE (event delegation)
-// ─────────────────────────────────────────────
 document.getElementById('filtrosCombustible').addEventListener('click', e => {
   if (e.target.classList.contains('filtro-btn')) {
     setFiltroComb(e.target.dataset.combustible, e.target);
   }
 });
 
-// SEARCH
 document.getElementById('searchInput').addEventListener('input', e => {
   searchQuery = e.target.value.trim();
   renderAutos();
@@ -1523,44 +1459,39 @@ document.getElementById('searchInput').addEventListener('input', e => {
 // INIT
 // ─────────────────────────────────────────────
 async function init() {
-  const autos = await fetchAutos();
-
   const grid = document.getElementById('autosGrid');
-  grid.innerHTML = ''; // Limpiar skeletons
-
-  if (!autos.length) {
+  try {
+    const autos = await fetchAutos();
+    grid.innerHTML = '';
+    if (!autos.length) {
+      grid.innerHTML = `
+        <div class="error-state" style="grid-column:1/-1">
+          <h3>Stock en actualización</h3>
+          <p>Escribinos por WhatsApp para consultar disponibilidad.</p><br>
+          <a href="https://wa.me/${WA_NUMBER}" class="btn-primary" target="_blank" style="display:inline-flex">
+            💬 Consultar por WhatsApp
+          </a>
+        </div>`;
+      document.getElementById('stockCount').textContent = '–';
+      return;
+    }
+    todosLosAutos = autos;
+    buildFiltrosMarca(autos);
+    autos.forEach(auto => grid.appendChild(buildCard(auto)));
+    document.getElementById('stockCount').textContent =
+      `${autos.length} auto${autos.length !== 1 ? 's' : ''} disponible${autos.length !== 1 ? 's' : ''}`;
+  } catch(e) {
+    console.error('Error cargando stock:', e);
     grid.innerHTML = `
       <div class="error-state" style="grid-column:1/-1">
         <h3>No se pudo cargar el stock</h3>
-        <p>Puede que la API de MercadoLibre no esté disponible en este momento.<br>
-        Escribinos por WhatsApp para consultar disponibilidad.</p>
-        <br>
+        <p>Escribinos por WhatsApp para consultar disponibilidad.</p><br>
         <a href="https://wa.me/${WA_NUMBER}" class="btn-primary" target="_blank" style="display:inline-flex">
           💬 Consultar por WhatsApp
         </a>
-      </div>
-    `;
+      </div>`;
     document.getElementById('stockCount').textContent = '–';
-    return;
   }
-
-  todosLosAutos = autos;
-  buildFiltrosMarca(autos);
-
-  // Recopilar imágenes para el hero (las primeras 5 con buena foto)
-  const heroImgs = autos
-    .filter(a => a.thumbnail)
-    .slice(0, 5)
-    .map(a => a.thumbnail.replace('-I.jpg', '-O.jpg').replace('http://', 'https://'));
-  if (heroImgs.length) initHero(heroImgs);
-
-  autos.forEach(auto => {
-    const card = buildCard(auto);
-    grid.appendChild(card);
-  });
-
-  document.getElementById('stockCount').textContent =
-    `${autos.length} auto${autos.length !== 1 ? 's' : ''} disponible${autos.length !== 1 ? 's' : ''}`;
 }
 
 init();
