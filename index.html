@@ -1338,13 +1338,13 @@ function buildCard(item) {
       </div>
       <div class="auto-precio">${precio}</div>
       <div class="auto-cta">
-        <a class="btn-wsp" href="https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waTexto)}" target="_blank">💬 Consultar</a>
+        <a class="btn-wsp" href="https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waTexto)}" target="_blank" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'consultar_auto',auto_nombre:'${titulo}'});">💬 Consultar</a>
         <button class="btn-ver">Ver detalle</button>
       </div>
     </div>
   `;
 
-  card.querySelector('.btn-ver').addEventListener('click', () => abrirModal(item));
+  card.querySelector('.btn-ver').addEventListener('click', () => { window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'ver_detalle_auto', auto_nombre: titulo}); abrirModal(item); });
   return card;
 }
 
