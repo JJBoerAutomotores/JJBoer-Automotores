@@ -981,6 +981,88 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .porque-items { grid-template-columns: 1fr; }
     .autos-grid { grid-template-columns: 1fr; }
   }
+
+  /* -- RESENAS -- */
+  .resenas-section {
+    padding: 80px 60px;
+    background: var(--azul);
+  }
+  .resenas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+  }
+  .resena-card {
+    background: rgba(255,255,255,0.06);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: background 0.2s;
+  }
+  .resena-card:hover { background: rgba(255,255,255,0.1); }
+  .resena-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .resena-avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: var(--bordo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: white;
+    flex-shrink: 0;
+  }
+  .resena-autor strong {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .resena-autor span {
+    font-size: 11px;
+    color: rgba(242,244,247,0.5);
+    letter-spacing: 0.5px;
+  }
+  .resena-estrellas {
+    color: #F5A623;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  .resena-texto {
+    font-size: 14px;
+    color: rgba(242,244,247,0.75);
+    line-height: 1.65;
+    font-style: italic;
+  }
+  .resenas-footer {
+    text-align: center;
+    margin-top: 36px;
+  }
+  .resenas-footer a {
+    color: rgba(242,244,247,0.5);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .resenas-footer a:hover { color: var(--blanco); }
+  @media (max-width: 900px) {
+    .resenas-section { padding: 48px 20px; }
+    .resenas-grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -1141,6 +1223,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="https://wa.me/5491170662694?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20los%20autos%20BYD%20el%C3%A9ctricos" class="btn-primary" target="_blank">
       ⚡ Me interesa BYD
     </a>
+  </div>
+</section>
+
+<!-- RESENAS -->
+<section class="resenas-section">
+  <div class="section-header">
+    <div>
+      <p class="section-eyebrow">Lo que dicen nuestros clientes</p>
+      <h2 class="section-title">Resenas reales</h2>
+    </div>
+  </div>
+  <div class="resenas-grid">
+    <div class="resena-card">
+      <div class="resena-header">
+        <div class="resena-avatar">KC</div>
+        <div class="resena-autor">
+          <strong>KC</strong>
+          <span>Hace 8 semanas &middot; Local Guide</span>
+        </div>
+      </div>
+      <div class="resena-estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="resena-texto">"Gracias a Jorge! Gracias a JJ Boer obtuve mi primer 0Km! Los comentarios positivos me hicieron que llegara hasta aca, agradezco el asesoramiento. Los tiempos cumplidos, la financiacion exacta. Todo transparente, todo muy bien. Para recomendar!"</p>
+    </div>
+    <div class="resena-card">
+      <div class="resena-header">
+        <div class="resena-avatar">FG</div>
+        <div class="resena-autor">
+          <strong>Florencia Gonzalez</strong>
+          <span>4 may 2025 &middot; Local Guide</span>
+        </div>
+      </div>
+      <div class="resena-estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="resena-texto">"Confianza, transparencia. Buena gente y buenos autos."</p>
+    </div>
+    <div class="resena-card">
+      <div class="resena-header">
+        <div class="resena-avatar">LA</div>
+        <div class="resena-autor">
+          <strong>Luis Alberto</strong>
+          <span>Hace 36 semanas &middot; Local Guide</span>
+        </div>
+      </div>
+      <div class="resena-estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="resena-texto">"Gran atencion de Jorge. Te resuelve todo. Autos en condiciones por estado y papeles, listos para disfrutar."</p>
+    </div>
+  </div>
+  <div class="resenas-footer">
+    <a href="https://www.google.com/maps/search/JJ+Boer+Automotores" target="_blank">Ver todas las resenas en Google Maps &rarr;</a>
   </div>
 </section>
 
