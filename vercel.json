@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/okm", "destination": "/okm.html" },
+    { "source": "/byd", "destination": "/byd.html" }
+  ]
+}  
