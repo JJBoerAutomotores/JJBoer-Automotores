@@ -4,664 +4,170 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>0KM Directo | JJ Boer Automotores</title>
-<meta name="description" content="Pedí tu auto 0KM directo de fabrica en JJ Boer Automotores. Todos los modelos Volkswagen disponibles en Villa Luro.">
+<meta name="description" content="Pedido de fabrica en JJ Boer Automotores. Volkswagen, Renault y Peugeot 0KM en Villa Luro.">
 <link rel="icon" type="image/png" href="/JJ BOER LOGO.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
-<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N69Z6N9R');</script>
 <style>
-
-:root {
-  --negro: #111111; --bordo: #7B1C1C; --azul: #1F3A5F;
-  --blanco: #F2F4F7; --bordo-light: #9B2C2C; --azul-light: #2A4D7F;
-  --gris: #888; --gris-light: #e8eaed;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { background: var(--negro); color: var(--blanco); font-family: 'Barlow', sans-serif; overflow-x: hidden; }
-
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 40px; height: 70px;
-  background: rgba(17,17,17,0.95); backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.nav-logo img { height: 38px; display: block; }
-.nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a {
-  color: rgba(242,244,247,0.7); text-decoration: none;
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
-  font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--blanco); }
-.nav-cta {
-  background: var(--bordo) !important; color: var(--blanco) !important;
-  padding: 8px 20px; border-radius: 3px;
-}
-.nav-cta:hover { background: var(--bordo-light) !important; }
-
-.page-hero {
-  padding: 140px 60px 60px;
-  background: var(--negro);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.page-eyebrow {
-  font-family: 'Barlow Condensed', sans-serif; font-size: 11px;
-  font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--bordo-light); margin-bottom: 10px;
-}
-.page-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(48px, 8vw, 96px); font-weight: 900;
-  text-transform: uppercase; line-height: 0.92; margin-bottom: 20px;
-}
-.page-subtitle {
-  font-size: 16px; color: rgba(242,244,247,0.55);
-  max-width: 560px; line-height: 1.6;
-}
-
-.section-eyebrow {
-  font-family: 'Barlow Condensed', sans-serif; font-size: 11px;
-  font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--bordo-light); margin-bottom: 8px;
-}
-.section-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(28px, 4vw, 44px); font-weight: 900;
-  text-transform: uppercase; line-height: 1;
-}
-
-.btn-primary {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--bordo); color: var(--blanco); text-decoration: none;
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-  font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase;
-  padding: 14px 28px; border-radius: 3px;
-  transition: background 0.2s; border: none; cursor: pointer;
-}
-.btn-primary:hover { background: var(--bordo-light); }
-
-footer {
-  background: var(--negro); border-top: 1px solid rgba(255,255,255,0.06);
-  padding: 40px 60px; display: flex; align-items: center;
-  justify-content: space-between; flex-wrap: wrap; gap: 20px;
-}
-footer img { height: 32px; }
-.footer-links { display: flex; gap: 28px; list-style: none; }
-.footer-links a {
-  color: var(--gris); text-decoration: none;
-  font-family: 'Barlow Condensed', sans-serif; font-size: 12px;
-  font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
-  transition: color 0.2s;
-}
-.footer-links a:hover { color: var(--blanco); }
-.footer-copy { font-size: 12px; color: var(--gris); }
-
-@media (max-width: 900px) {
-  nav { padding: 0 20px; }
-  .nav-links { display: none; }
-  .page-hero { padding: 110px 20px 48px; }
-  footer { padding: 32px 20px; flex-direction: column; align-items: flex-start; }
-}
-
-
-.okm-body { padding: 60px; background: #0f0f0f; }
-.okm-categoria { margin-bottom: 60px; }
-.okm-cat-titulo {
-  font-family: 'Barlow Condensed', sans-serif; font-size: 12px;
-  font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--bordo-light); margin-bottom: 20px; padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-}
-.okm-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2px;
-}
-.okm-card {
-  background: #1a1a1a; padding: 22px 24px;
-  display: flex; flex-direction: column; gap: 10px;
-  transition: background 0.2s;
-}
-.okm-card:hover { background: #222; }
-.okm-card-marca {
-  font-family: 'Barlow Condensed', sans-serif; font-size: 10px;
-  font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
-  color: var(--bordo-light);
-}
-.okm-card-nombre {
-  font-family: 'Barlow Condensed', sans-serif; font-size: 22px;
-  font-weight: 800; text-transform: uppercase; line-height: 1.1;
-}
-.okm-card-version {
-  font-size: 12px; color: rgba(242,244,247,0.5);
-  text-transform: uppercase; letter-spacing: 0.5px;
-}
-.okm-card-footer {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-top: 6px; padding-top: 12px;
-  border-top: 1px solid rgba(255,255,255,0.06);
-}
-.okm-card-btn {
-  background: var(--bordo); color: white; border: none;
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-  font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
-  padding: 7px 14px; border-radius: 2px; cursor: pointer;
-  text-decoration: none; transition: background 0.2s;
-}
-.okm-card-btn:hover { background: var(--bordo-light); }
-.okm-card-label {
-  font-size: 11px; color: rgba(242,244,247,0.35);
-  font-family: 'Barlow Condensed', sans-serif;
-  letter-spacing: 1px; text-transform: uppercase;
-}
-@media (max-width: 900px) {
-  .okm-body { padding: 40px 20px; }
-  .okm-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 600px) {
-  .okm-grid { grid-template-columns: 1fr; }
-}
-
-
-  .filtros-bar {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    align-items: center;
-  }
-  .filtro-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 2px; text-transform: uppercase;
-    color: var(--gris); margin-right: 4px;
-  }
-  .filtro-btn {
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.12);
-    color: rgba(242,244,247,0.6);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 600; font-size: 12px;
-    letter-spacing: 1px; text-transform: uppercase;
-    padding: 7px 16px; border-radius: 2px;
-    cursor: pointer; transition: all 0.2s;
-  }
-  .filtro-btn:hover, .filtro-btn.active {
-    background: var(--bordo);
-    border-color: var(--bordo);
-    color: var(--blanco);
-  }
-  .search-bar {
-    display: flex; gap: 8px;
-    margin-bottom: 32px; max-width: 400px;
-  }
-  .search-input {
-    flex: 1;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: var(--blanco); font-size: 14px;
-    padding: 10px 16px; border-radius: 3px;
-    outline: none; transition: border-color 0.2s;
-    font-family: 'Barlow', sans-serif;
-  }
-  .search-input::placeholder { color: rgba(242,244,247,0.3); }
-  .search-input:focus { border-color: var(--bordo); }
-  .stock-count {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13px; font-weight: 600;
-    letter-spacing: 1px; color: var(--gris);
-    text-transform: uppercase; margin-bottom: 24px;
-  }
-  .empty-state {
-    grid-column: 1/-1; text-align: center;
-    padding: 60px 20px; color: var(--gris);
-  }
-  .empty-state h3 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 24px; font-weight: 700;
-    text-transform: uppercase; margin-bottom: 8px;
-    color: var(--blanco);
-  }
-
+:root {--negro:#111111;--bordo:#7B1C1C;--azul:#1F3A5F;--blanco:#F2F4F7;--bordo-light:#9B2C2C;--gris:#888;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--negro);color:var(--blanco);font-family:'Barlow',sans-serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:70px;background:rgba(17,17,17,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);}
+.nav-logo img{height:38px;display:block;}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{color:rgba(242,244,247,0.7);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--blanco);}
+.nav-cta{background:var(--bordo)!important;color:var(--blanco)!important;padding:8px 20px;border-radius:3px;}
+.page-hero{padding:140px 60px 60px;background:var(--negro);border-bottom:1px solid rgba(255,255,255,0.06);}
+.page-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--bordo-light);margin-bottom:10px;}
+.page-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(48px,8vw,96px);font-weight:900;text-transform:uppercase;line-height:0.92;margin-bottom:20px;}
+.page-subtitle{font-size:16px;color:rgba(242,244,247,0.55);max-width:560px;line-height:1.6;}
+.okm-body{padding:60px;background:#0f0f0f;}
+.filtros-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;align-items:center;}
+.filtro-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gris);margin-right:4px;}
+.filtro-btn{background:transparent;border:1px solid rgba(255,255,255,0.12);color:rgba(242,244,247,0.6);font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:7px 16px;border-radius:2px;cursor:pointer;transition:all 0.2s;}
+.filtro-btn:hover,.filtro-btn.active{background:var(--bordo);border-color:var(--bordo);color:var(--blanco);}
+.search-bar{display:flex;gap:8px;margin-bottom:16px;max-width:400px;}
+.search-input{flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:var(--blanco);font-size:14px;padding:10px 16px;border-radius:3px;outline:none;transition:border-color 0.2s;font-family:'Barlow',sans-serif;}
+.search-input::placeholder{color:rgba(242,244,247,0.3);}
+.search-input:focus{border-color:var(--bordo);}
+.stock-count{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;color:var(--gris);text-transform:uppercase;margin-bottom:24px;}
+.okm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px;}
+.okm-card{background:#1a1a1a;padding:22px 24px;display:flex;flex-direction:column;gap:10px;transition:background 0.2s;}
+.okm-card:hover{background:#222;}
+.okm-card-marca{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--bordo-light);}
+.okm-card-nombre{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;text-transform:uppercase;line-height:1.1;}
+.okm-card-version{font-size:12px;color:rgba(242,244,247,0.5);text-transform:uppercase;letter-spacing:0.5px;}
+.okm-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:6px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.06);}
+.okm-card-btn{background:var(--bordo);color:white;border:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:7px 14px;border-radius:2px;cursor:pointer;text-decoration:none;transition:background 0.2s;}
+.okm-card-btn:hover{background:var(--bordo-light);}
+.okm-card-label{font-size:11px;color:rgba(242,244,247,0.35);font-family:'Barlow Condensed',sans-serif;letter-spacing:1px;text-transform:uppercase;}
+.empty-state{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--gris);}
+.empty-state h3{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;text-transform:uppercase;margin-bottom:8px;color:var(--blanco);}
+footer{background:var(--negro);border-top:1px solid rgba(255,255,255,0.06);padding:40px 60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+footer img{height:32px;}
+.footer-links{display:flex;gap:28px;list-style:none;}
+.footer-links a{color:var(--gris);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s;}
+.footer-links a:hover{color:var(--blanco);}
+.footer-copy{font-size:12px;color:var(--gris);}
+@media(max-width:900px){nav{padding:0 20px;}.nav-links{display:none;}.page-hero{padding:110px 20px 48px;}.okm-body{padding:40px 20px;}.okm-grid{grid-template-columns:1fr 1fr;}footer{padding:32px 20px;flex-direction:column;align-items:flex-start;}}
+@media(max-width:600px){.okm-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N69Z6N9R" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <nav>
-  <a href="/" class="nav-logo">
-    <img src="/JJ BOER LOGO.png" alt="JJ Boer Automotores" style="height:38px;">
-  </a>
+  <a href="/" class="nav-logo"><img src="/JJ BOER LOGO.png" alt="JJ Boer Automotores" style="height:38px;"></a>
   <ul class="nav-links">
     <li><a href="/#stock">Stock</a></li>
     <li><a href="/okm">0KM Directo</a></li>
     <li><a href="/#nosotros">Nosotros</a></li>
     <li><a href="/byd">BYD</a></li>
     <li><a href="/#contacto">Contacto</a></li>
-    <li><a href="https://wa.me/5491170662694" class="nav-cta" target="_blank">💬 WhatsApp</a></li>
+    <li><a href="https://wa.me/5491170662694" class="nav-cta" target="_blank">WhatsApp</a></li>
   </ul>
 </nav>
 
 <div class="page-hero">
-  <p class="page-eyebrow">Pedido de fábrica</p>
+  <p class="page-eyebrow">Pedido de fabrica</p>
   <h1 class="page-title">0KM Directo</h1>
-  <p class="page-subtitle">Reserva tu 0KM directo de fábrica. Consulta disponibilidad, plazos de entrega y opciones de financiación sin compromiso.</p>
+  <p class="page-subtitle">Reserva tu 0KM directo de fabrica. Consulta disponibilidad, plazos de entrega y financiacion sin compromiso.</p>
 </div>
 
 <div class="okm-body">
-
-  <div class="okm-categoria">
-    <p class="okm-cat-titulo">🚗 Autos / SUV</p>
-    <div class="okm-grid">
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Polo</h3>
-        <p class="okm-card-version">Track 1.6 MSI Manual</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Polo%20Track%201.6%20MSI%20Manual%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Polo</h3>
-        <p class="okm-card-version">Comfortline 170TSI AT</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Polo%20Comfortline%20170TSI%20AT%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Polo</h3>
-        <p class="okm-card-version">Highline 170TSI AT</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Polo%20Highline%20170TSI%20AT%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Saveiro</h3>
-        <p class="okm-card-version">CS Trendline 1.6 MSI</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Saveiro%20CS%20Trendline%201.6%20MSI%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Tera</h3>
-        <p class="okm-card-version">1.6 MSI sin Pack Safe</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Tera%201.6%20MSI%20sin%20Pack%20Safe%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Tera</h3>
-        <p class="okm-card-version">1.6 MSI con Pack Safe</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Tera%201.6%20MSI%20con%20Pack%20Safe%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Tera</h3>
-        <p class="okm-card-version">Comfort 170TSI AT</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Tera%20Comfort%20170TSI%20AT%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Tera</h3>
-        <p class="okm-card-version">High 170TSI AT</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Tera%20High%20170TSI%20AT%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Tera</h3>
-        <p class="okm-card-version">Outfit 170TSI AT</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Tera%20Outfit%20170TSI%20AT%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Nivus</h3>
-        <p class="okm-card-version">Sense 170TSI Manual</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Nivus%20Sense%20170TSI%20Manual%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Nivus</h3>
-        <p class="okm-card-version">Trendline 200TSI AT</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Nivus%20Trendline%20200TSI%20AT%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Nivus</h3>
-        <p class="okm-card-version">Comfortline 200TSI AT</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Nivus%20Comfortline%20200TSI%20AT%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Nivus</h3>
-        <p class="okm-card-version">Highline 200TSI AT</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Nivus%20Highline%20200TSI%20AT%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Nivus</h3>
-        <p class="okm-card-version">Outfit 200TSI AT</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Nivus%20Outfit%20200TSI%20AT%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">T-Cross</h3>
-        <p class="okm-card-version">Sense 170TSI Manual</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20T-Cross%20Sense%20170TSI%20Manual%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">T-Cross</h3>
-        <p class="okm-card-version">Trendline 200TSI AT</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20T-Cross%20Trendline%20200TSI%20AT%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">T-Cross</h3>
-        <p class="okm-card-version">Comfortline 200TSI Tiptronic</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20T-Cross%20Comfortline%20200TSI%20Tiptronic%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">T-Cross</h3>
-        <p class="okm-card-version">Highline 200TSI AT</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20T-Cross%20Highline%20200TSI%20AT%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">T-Cross</h3>
-        <p class="okm-card-version">Highline Bi-Tono 200TSI</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20T-Cross%20Highline%20Bi-Tono%20200TSI%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">T-Cross</h3>
-        <p class="okm-card-version">Highline Extreme 200TSI AT</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20T-Cross%20Highline%20Extreme%20200TSI%20AT%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Taos</h3>
-        <p class="okm-card-version">Highline 250TSI</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Taos%20Highline%20250TSI%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Taos</h3>
-        <p class="okm-card-version">Highline Bi-Tono 250TSI</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Taos%20Highline%20Bi-Tono%20250TSI%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Vento GLI</h3>
-        <p class="okm-card-version">350TSI DSG</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Vento%20GLI%20350TSI%20DSG%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Tiguan</h3>
-        <p class="okm-card-version">R-LINE 250TSI</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Tiguan%20R-LINE%20250TSI%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-    </div>
+  <div class="filtros-bar">
+    <span class="filtro-label">Marca:</span>
+    <button class="filtro-btn active" data-marca="todos">Todos (77)</button>
+    <button class="filtro-btn" data-marca="volkswagen">Volkswagen (44)</button>
+    <button class="filtro-btn" data-marca="renault">Renault (24)</button>
+    <button class="filtro-btn" data-marca="peugeot">Peugeot (9)</button>
   </div>
-
-  <div class="okm-categoria">
-    <p class="okm-cat-titulo">🚙 Camionetas Pick Up</p>
-    <div class="okm-grid">
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">TL 4x2 DC 140CV</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20TL%204x2%20DC%20140CV%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">TL 4x4 DC 180CV</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20TL%204x4%20DC%20180CV%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">CF 4x2 Manual 180CV</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20CF%204x2%20Manual%20180CV%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">CF 4x2 AT 180CV</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20CF%204x2%20AT%20180CV%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">Highline 4x2 AT 180CV</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20Highline%204x2%20AT%20180CV%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">Trendline TDI MT 4x2 G2</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20Trendline%20TDI%20MT%204x2%20G2%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">Trendline TDI MT 4x4 G2</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20Trendline%20TDI%20MT%204x4%20G2%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">Comfortline MT 4x2 G2</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20Comfortline%20MT%204x2%20G2%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">Comfortline AT 4x2 G2</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20Comfortline%20AT%204x2%20G2%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">Highline AT 4x2 G2</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20Highline%20AT%204x2%20G2%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">V6 Comfortline 258CV</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Comfortline%20258CV%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">V6 Comfortline AT 4x4 G2</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Comfortline%20AT%204x4%20G2%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">V6 Highline 258CV</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Highline%20258CV%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">V6 Highline AT 4x4 G2</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Highline%20AT%204x4%20G2%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">V6 Extreme 258CV</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Extreme%20258CV%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">V6 Extreme AT 4x4 G2</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Extreme%20AT%204x4%20G2%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">V6 Hero 258CV</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Hero%20258CV%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">V6 Hero AT 4x4 G2</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Hero%20AT%204x4%20G2%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">V6 Black Style 258CV</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Black%20Style%20258CV%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-      <div class="okm-card">
-        <p class="okm-card-marca">Volkswagen</p>
-        <h3 class="okm-card-nombre">Amarok</h3>
-        <p class="okm-card-version">V6 Black Style AT 4x4 G2</p>
-        <div class="okm-card-footer">
-          <span class="okm-card-label">Consultar precio</span>
-          <a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Black%20Style%20AT%204x4%20G2%200KM.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
-        </div>
-      </div>
-    </div>
+  <div class="search-bar">
+    <input type="text" class="search-input" id="searchInput" placeholder="Buscar modelo...">
   </div>
-
+  <p class="stock-count" id="stockCount">77 modelos disponibles</p>
+  <div class="okm-grid" id="okmGrid">
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Polo</h3><p class="okm-card-version">Track 1.6 MSI Manual</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Polo%20Track%201.6%20MSI%20Manual%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Polo</h3><p class="okm-card-version">Comfortline 170TSI AT</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Polo%20Comfortline%20170TSI%20AT%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Polo</h3><p class="okm-card-version">Highline 170TSI AT</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Polo%20Highline%20170TSI%20AT%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Saveiro</h3><p class="okm-card-version">CS Trendline 1.6 MSI</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Saveiro%20CS%20Trendline%201.6%20MSI%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Tera</h3><p class="okm-card-version">1.6 MSI sin Pack Safe</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Tera%201.6%20MSI%20sin%20Pack%20Safe%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Tera</h3><p class="okm-card-version">1.6 MSI con Pack Safe</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Tera%201.6%20MSI%20con%20Pack%20Safe%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Tera</h3><p class="okm-card-version">Comfort 170TSI AT</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Tera%20Comfort%20170TSI%20AT%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Tera</h3><p class="okm-card-version">High 170TSI AT</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Tera%20High%20170TSI%20AT%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Tera</h3><p class="okm-card-version">Outfit 170TSI AT</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Tera%20Outfit%20170TSI%20AT%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Nivus</h3><p class="okm-card-version">Sense 170TSI Manual</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Nivus%20Sense%20170TSI%20Manual%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Nivus</h3><p class="okm-card-version">Trendline 200TSI AT</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Nivus%20Trendline%20200TSI%20AT%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Nivus</h3><p class="okm-card-version">Comfortline 200TSI AT</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Nivus%20Comfortline%20200TSI%20AT%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Nivus</h3><p class="okm-card-version">Highline 200TSI AT</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Nivus%20Highline%20200TSI%20AT%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Nivus</h3><p class="okm-card-version">Outfit 200TSI AT</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Nivus%20Outfit%20200TSI%20AT%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">T-Cross</h3><p class="okm-card-version">Sense 170TSI Manual</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20T-Cross%20Sense%20170TSI%20Manual%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">T-Cross</h3><p class="okm-card-version">Trendline 200TSI AT</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20T-Cross%20Trendline%20200TSI%20AT%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">T-Cross</h3><p class="okm-card-version">Comfortline 200TSI Tiptronic</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20T-Cross%20Comfortline%20200TSI%20Tiptronic%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">T-Cross</h3><p class="okm-card-version">Highline 200TSI AT</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20T-Cross%20Highline%20200TSI%20AT%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">T-Cross</h3><p class="okm-card-version">Highline Bi-Tono 200TSI</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20T-Cross%20Highline%20Bi-Tono%20200TSI%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">T-Cross</h3><p class="okm-card-version">Highline Extreme 200TSI AT</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20T-Cross%20Highline%20Extreme%20200TSI%20AT%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Taos</h3><p class="okm-card-version">Highline 250TSI</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Taos%20Highline%20250TSI%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Taos</h3><p class="okm-card-version">Highline Bi-Tono 250TSI</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Taos%20Highline%20Bi-Tono%20250TSI%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Vento GLI</h3><p class="okm-card-version">350TSI DSG</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Vento%20GLI%20350TSI%20DSG%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Tiguan</h3><p class="okm-card-version">R-LINE 250TSI</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Tiguan%20R-LINE%20250TSI%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">TL 4x2 DC 140CV</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20TL%204x2%20DC%20140CV%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">TL 4x4 DC 180CV</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20TL%204x4%20DC%20180CV%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">CF 4x2 Manual 180CV</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20CF%204x2%20Manual%20180CV%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">CF 4x2 AT 180CV</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20CF%204x2%20AT%20180CV%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">Highline 4x2 AT 180CV</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20Highline%204x2%20AT%20180CV%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">Trendline TDI MT 4x2 G2</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20Trendline%20TDI%20MT%204x2%20G2%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">Trendline TDI MT 4x4 G2</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20Trendline%20TDI%20MT%204x4%20G2%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">Comfortline MT 4x2 G2</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20Comfortline%20MT%204x2%20G2%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">Comfortline AT 4x2 G2</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20Comfortline%20AT%204x2%20G2%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">Highline AT 4x2 G2</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20Highline%20AT%204x2%20G2%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">V6 Comfortline 258CV</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Comfortline%20258CV%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">V6 Comfortline AT 4x4 G2</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Comfortline%20AT%204x4%20G2%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">V6 Highline 258CV</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Highline%20258CV%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">V6 Highline AT 4x4 G2</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Highline%20AT%204x4%20G2%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">V6 Extreme 258CV</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Extreme%20258CV%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">V6 Extreme AT 4x4 G2</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Extreme%20AT%204x4%20G2%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">V6 Hero 258CV</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Hero%20258CV%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">V6 Hero AT 4x4 G2</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Hero%20AT%204x4%20G2%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">V6 Black Style 258CV</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Black%20Style%20258CV%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="volkswagen"><p class="okm-card-marca">Volkswagen</p><h3 class="okm-card-nombre">Amarok</h3><p class="okm-card-version">V6 Black Style AT 4x4 G2</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Volkswagen%20Amarok%20V6%20Black%20Style%20AT%204x4%20G2%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Kwid</h3><p class="okm-card-version">Iconic Bitono 1.0</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Kwid%20Iconic%20Bitono%201.0%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Kwid</h3><p class="okm-card-version">Iconic Outsider 1.0</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Kwid%20Iconic%20Outsider%201.0%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Kardian</h3><p class="okm-card-version">Evolution MT MY25</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Kardian%20Evolution%20MT%20MY25%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Kardian</h3><p class="okm-card-version">Evolution EDC MY25</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Kardian%20Evolution%20EDC%20MY25%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Kardian</h3><p class="okm-card-version">Iconic EDC MY25</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Kardian%20Iconic%20EDC%20MY25%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Duster</h3><p class="okm-card-version">Intens 1.6 MT</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Duster%20Intens%201.6%20MT%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Duster</h3><p class="okm-card-version">Iconic 1.3T CVT</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Duster%20Iconic%201.3T%20CVT%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Duster</h3><p class="okm-card-version">Iconic 1.3T 4x4 MT</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Duster%20Iconic%201.3T%204x4%20MT%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Arkana</h3><p class="okm-card-version">E-Tech Hybrid Esprit Alpine</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Arkana%20E-Tech%20Hybrid%20Esprit%20Alpine%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Boreal</h3><p class="okm-card-version">Evolution</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Boreal%20Evolution%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Boreal</h3><p class="okm-card-version">Techno</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Boreal%20Techno%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Boreal</h3><p class="okm-card-version">Iconic</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Boreal%20Iconic%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Koleos</h3><p class="okm-card-version">Techno</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Koleos%20Techno%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Koleos</h3><p class="okm-card-version">Esprit Alpine Full Hybrid E-Tech</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Koleos%20Esprit%20Alpine%20Full%20Hybrid%20E-Tech%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Oroch</h3><p class="okm-card-version">Emotion 1.6 SCe 114 2WD</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Oroch%20Emotion%201.6%20SCe%20114%202WD%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Oroch</h3><p class="okm-card-version">Iconic 1.3 TCe 163 2WD CVT</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Oroch%20Iconic%201.3%20TCe%20163%202WD%20CVT%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Oroch</h3><p class="okm-card-version">Outsider 1.3 TCe 163 4WD</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Oroch%20Outsider%201.3%20TCe%20163%204WD%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Kangoo</h3><p class="okm-card-version">II Zen 1.6 Sce Pasajero</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Kangoo%20II%20Zen%201.6%20Sce%20Pasajero%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Kangoo</h3><p class="okm-card-version">II Stepway 1.6 Sce Pasajero</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Kangoo%20II%20Stepway%201.6%20Sce%20Pasajero%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Kangoo</h3><p class="okm-card-version">II Express 2A 1.6 SCe Furgon</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Kangoo%20II%20Express%202A%201.6%20SCe%20Furgon%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Kangoo</h3><p class="okm-card-version">II Express 5A 1.6 SCe Furgon</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Kangoo%20II%20Express%205A%201.6%20SCe%20Furgon%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Master</h3><p class="okm-card-version">Furgon L1H1</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Master%20Furgon%20L1H1%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Master</h3><p class="okm-card-version">Furgon L2H2</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Master%20Furgon%20L2H2%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="renault"><p class="okm-card-marca">Renault</p><h3 class="okm-card-nombre">Master</h3><p class="okm-card-version">Furgon L3H2</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Renault%20Master%20Furgon%20L3H2%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="peugeot"><p class="okm-card-marca">Peugeot</p><h3 class="okm-card-nombre">208</h3><p class="okm-card-version">Allure MT</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Peugeot%20208%20Allure%20MT%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="peugeot"><p class="okm-card-marca">Peugeot</p><h3 class="okm-card-nombre">208</h3><p class="okm-card-version">Allure AT AM26</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Peugeot%20208%20Allure%20AT%20AM26%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="peugeot"><p class="okm-card-marca">Peugeot</p><h3 class="okm-card-nombre">208</h3><p class="okm-card-version">Allure PK T200 AM26</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Peugeot%20208%20Allure%20PK%20T200%20AM26%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="peugeot"><p class="okm-card-marca">Peugeot</p><h3 class="okm-card-nombre">208</h3><p class="okm-card-version">GT T200 AM26</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Peugeot%20208%20GT%20T200%20AM26%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="peugeot"><p class="okm-card-marca">Peugeot</p><h3 class="okm-card-nombre">2008</h3><p class="okm-card-version">Active T200 AM26</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Peugeot%202008%20Active%20T200%20AM26%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="peugeot"><p class="okm-card-marca">Peugeot</p><h3 class="okm-card-nombre">2008</h3><p class="okm-card-version">Allure T200 AM26</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Peugeot%202008%20Allure%20T200%20AM26%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="peugeot"><p class="okm-card-marca">Peugeot</p><h3 class="okm-card-nombre">2008</h3><p class="okm-card-version">GT T200 AM26</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Peugeot%202008%20GT%20T200%20AM26%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="peugeot"><p class="okm-card-marca">Peugeot</p><h3 class="okm-card-nombre">5008</h3><p class="okm-card-version">GT Okinite White</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Peugeot%205008%20GT%20Okinite%20White%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+      <div class="okm-card" data-marca="peugeot"><p class="okm-card-marca">Peugeot</p><h3 class="okm-card-nombre">Partner</h3><p class="okm-card-version">1.6 HDi</p><div class="okm-card-footer"><span class="okm-card-label">Consultar precio</span><a class="okm-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20Peugeot%20Partner%201.6%20HDi%200KM.%20Pod%C3%A9s%20darme%20mas%20info%20y%20precio%3F" target="_blank">Consultar</a></div></div>
+  </div>
 </div>
 
 <footer>
@@ -672,7 +178,51 @@ footer img { height: 32px; }
     <li><a href="/#contacto">Contacto</a></li>
     <li><a href="https://instagram.com/jjboerautomotores" target="_blank">Instagram</a></li>
   </ul>
-  <p class="footer-copy">© 2025 JJ Boer Automotores · Villa Luro, Buenos Aires</p>
+  <p class="footer-copy">2025 JJ Boer Automotores - Villa Luro, Buenos Aires</p>
 </footer>
+
+<script>
+let filtroMarca = 'todos';
+let searchQuery = '';
+
+function aplicarFiltros() {
+  const cards = document.querySelectorAll('.okm-card');
+  let visibles = 0;
+  cards.forEach(card => {
+    const marcaOk = filtroMarca === 'todos' || card.dataset.marca === filtroMarca;
+    const nombre = card.querySelector('.okm-card-nombre').textContent.toLowerCase();
+    const version = card.querySelector('.okm-card-version').textContent.toLowerCase();
+    const marca = card.querySelector('.okm-card-marca').textContent.toLowerCase();
+    const searchOk = !searchQuery || nombre.includes(searchQuery) || version.includes(searchQuery) || marca.includes(searchQuery);
+    const show = marcaOk && searchOk;
+    card.style.display = show ? '' : 'none';
+    if (show) visibles++;
+  });
+  document.getElementById('stockCount').textContent = visibles + ' modelo' + (visibles !== 1 ? 's' : '') + ' disponible' + (visibles !== 1 ? 's' : '');
+  const grid = document.getElementById('okmGrid');
+  const empty = grid.querySelector('.empty-state');
+  if (empty) empty.remove();
+  if (visibles === 0) {
+    const msg = document.createElement('div');
+    msg.className = 'empty-state';
+    msg.innerHTML = '<h3>Sin resultados</h3><p>Proba con otro termino o escribinos por WhatsApp</p>';
+    grid.appendChild(msg);
+  }
+}
+
+document.querySelectorAll('.filtro-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    filtroMarca = btn.dataset.marca;
+    document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    aplicarFiltros();
+  });
+});
+
+document.getElementById('searchInput').addEventListener('input', e => {
+  searchQuery = e.target.value.trim().toLowerCase();
+  aplicarFiltros();
+});
+</script>
 </body>
 </html>
