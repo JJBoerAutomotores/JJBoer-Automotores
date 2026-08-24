@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BYD Eléctricos | JJ Boer Automotores</title>
+<meta name="description" content="Autos eléctricos BYD disponibles en JJ Boer Automotores, Villa Luro. Dolphin Mini, Yuan Pro, Atto 2, Song Pro, Seal U y Shark.">
+<link rel="icon" type="image/png" href="/JJ BOER LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N69Z6N9R');</script>
+<style>
+
+:root {
+  --negro: #111111; --bordo: #7B1C1C; --azul: #1F3A5F;
+  --blanco: #F2F4F7; --bordo-light: #9B2C2C; --azul-light: #2A4D7F;
+  --gris: #888; --gris-light: #e8eaed;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--negro); color: var(--blanco); font-family: 'Barlow', sans-serif; overflow-x: hidden; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 40px; height: 70px;
+  background: rgba(17,17,17,0.95); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-logo img { height: 38px; display: block; }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+  color: rgba(242,244,247,0.7); text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+  font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--blanco); }
+.nav-cta {
+  background: var(--bordo) !important; color: var(--blanco) !important;
+  padding: 8px 20px; border-radius: 3px;
+}
+.nav-cta:hover { background: var(--bordo-light) !important; }
+
+.page-hero {
+  padding: 140px 60px 60px;
+  background: var(--negro);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.page-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 11px;
+  font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--bordo-light); margin-bottom: 10px;
+}
+.page-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(48px, 8vw, 96px); font-weight: 900;
+  text-transform: uppercase; line-height: 0.92; margin-bottom: 20px;
+}
+.page-subtitle {
+  font-size: 16px; color: rgba(242,244,247,0.55);
+  max-width: 560px; line-height: 1.6;
+}
+
+.section-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 11px;
+  font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--bordo-light); margin-bottom: 8px;
+}
+.section-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(28px, 4vw, 44px); font-weight: 900;
+  text-transform: uppercase; line-height: 1;
+}
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--bordo); color: var(--blanco); text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 14px 28px; border-radius: 3px;
+  transition: background 0.2s; border: none; cursor: pointer;
+}
+.btn-primary:hover { background: var(--bordo-light); }
+
+footer {
+  background: var(--negro); border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 40px 60px; display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 20px;
+}
+footer img { height: 32px; }
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links a {
+  color: var(--gris); text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif; font-size: 12px;
+  font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--blanco); }
+.footer-copy { font-size: 12px; color: var(--gris); }
+
+@media (max-width: 900px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .page-hero { padding: 110px 20px 48px; }
+  footer { padding: 32px 20px; flex-direction: column; align-items: flex-start; }
+}
+
+
+.byd-body { padding: 60px; background: linear-gradient(180deg, #0d1f35 0%, #0f0f0f 40%); }
+.byd-intro { max-width: 640px; margin-bottom: 56px; }
+.byd-intro p { font-size: 16px; color: rgba(242,244,247,0.55); line-height: 1.7; margin-top: 16px; }
+.byd-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2px;
+}
+.byd-card {
+  background: rgba(255,255,255,0.05); padding: 28px;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: background 0.2s; border-top: 2px solid rgba(79,195,247,0.3);
+}
+.byd-card:hover { background: rgba(255,255,255,0.09); }
+.byd-card-tag {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 10px;
+  font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: #4FC3F7;
+}
+.byd-card-nombre {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 26px;
+  font-weight: 900; text-transform: uppercase; line-height: 1;
+}
+.byd-card-version {
+  font-size: 12px; color: rgba(242,244,247,0.45);
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.byd-card-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 8px; padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.byd-card-electrico {
+  font-size: 11px; color: #4FC3F7; font-weight: 600;
+  letter-spacing: 1px; font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+}
+.byd-card-btn {
+  background: #1565C0; color: white; border: none;
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+  padding: 7px 14px; border-radius: 2px; cursor: pointer;
+  text-decoration: none; transition: background 0.2s;
+}
+.byd-card-btn:hover { background: #1976D2; }
+.byd-banner-inferior {
+  margin-top: 60px; background: rgba(79,195,247,0.07);
+  border: 1px solid rgba(79,195,247,0.15); border-radius: 4px;
+  padding: 36px 40px; display: flex; align-items: center;
+  justify-content: space-between; gap: 24px; flex-wrap: wrap;
+}
+.byd-banner-inferior h3 {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 28px;
+  font-weight: 800; text-transform: uppercase; margin-bottom: 6px;
+}
+.byd-banner-inferior p { font-size: 14px; color: rgba(242,244,247,0.55); }
+@media (max-width: 900px) {
+  .byd-body { padding: 40px 20px; }
+  .byd-grid { grid-template-columns: 1fr 1fr; }
+  .byd-banner-inferior { padding: 24px; }
+}
+@media (max-width: 600px) {
+  .byd-grid { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N69Z6N9R" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/JJ BOER LOGO.png" alt="JJ Boer Automotores" style="height:38px;">
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#stock">Stock</a></li>
+    <li><a href="/okm">0KM Directo</a></li>
+    <li><a href="/#nosotros">Nosotros</a></li>
+    <li><a href="/byd">BYD</a></li>
+    <li><a href="/#contacto">Contacto</a></li>
+    <li><a href="https://wa.me/5491170662694" class="nav-cta" target="_blank">💬 WhatsApp</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero" style="background: linear-gradient(135deg, #0d1f35 0%, #111 100%);">
+  <p class="page-eyebrow" style="color: #4FC3F7;">Movilidad eléctrica</p>
+  <h1 class="page-title">BYD en<br>JJ Boer.</h1>
+  <p class="page-subtitle">Los autos eléctricos más vendidos del mundo, ahora disponibles en Villa Luro. Consultá disponibilidad y financiación.</p>
+</div>
+
+<div class="byd-body">
+  <div class="byd-grid">
+    <div class="byd-card">
+      <p class="byd-card-tag">⚡ Eléctrico BYD</p>
+      <h3 class="byd-card-nombre">Dolphin Mini</h3>
+      <p class="byd-card-version">GL</p>
+      <div class="byd-card-footer">
+        <span class="byd-card-electrico">⚡ 0 emisiones</span>
+        <a class="byd-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20BYD%20Dolphin%20Mini%20GL.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
+      </div>
+    </div>
+    <div class="byd-card">
+      <p class="byd-card-tag">⚡ Eléctrico BYD</p>
+      <h3 class="byd-card-nombre">Dolphin Mini</h3>
+      <p class="byd-card-version">GS</p>
+      <div class="byd-card-footer">
+        <span class="byd-card-electrico">⚡ 0 emisiones</span>
+        <a class="byd-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20BYD%20Dolphin%20Mini%20GS.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
+      </div>
+    </div>
+    <div class="byd-card">
+      <p class="byd-card-tag">⚡ Eléctrico BYD</p>
+      <h3 class="byd-card-nombre">Yuan Pro</h3>
+      <p class="byd-card-version">GS</p>
+      <div class="byd-card-footer">
+        <span class="byd-card-electrico">⚡ 0 emisiones</span>
+        <a class="byd-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20BYD%20Yuan%20Pro%20GS.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
+      </div>
+    </div>
+    <div class="byd-card">
+      <p class="byd-card-tag">⚡ Eléctrico BYD</p>
+      <h3 class="byd-card-nombre">Atto 2</h3>
+      <p class="byd-card-version"></p>
+      <div class="byd-card-footer">
+        <span class="byd-card-electrico">⚡ 0 emisiones</span>
+        <a class="byd-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20BYD%20Atto%202.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
+      </div>
+    </div>
+    <div class="byd-card">
+      <p class="byd-card-tag">⚡ Eléctrico BYD</p>
+      <h3 class="byd-card-nombre">Song Pro</h3>
+      <p class="byd-card-version">GL</p>
+      <div class="byd-card-footer">
+        <span class="byd-card-electrico">⚡ 0 emisiones</span>
+        <a class="byd-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20BYD%20Song%20Pro%20GL.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
+      </div>
+    </div>
+    <div class="byd-card">
+      <p class="byd-card-tag">⚡ Eléctrico BYD</p>
+      <h3 class="byd-card-nombre">Song Pro</h3>
+      <p class="byd-card-version">GS</p>
+      <div class="byd-card-footer">
+        <span class="byd-card-electrico">⚡ 0 emisiones</span>
+        <a class="byd-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20BYD%20Song%20Pro%20GS.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
+      </div>
+    </div>
+    <div class="byd-card">
+      <p class="byd-card-tag">⚡ Eléctrico BYD</p>
+      <h3 class="byd-card-nombre">Seal U</h3>
+      <p class="byd-card-version"></p>
+      <div class="byd-card-footer">
+        <span class="byd-card-electrico">⚡ 0 emisiones</span>
+        <a class="byd-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20BYD%20Seal%20U.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
+      </div>
+    </div>
+    <div class="byd-card">
+      <p class="byd-card-tag">⚡ Eléctrico BYD</p>
+      <h3 class="byd-card-nombre">Shark</h3>
+      <p class="byd-card-version"></p>
+      <div class="byd-card-footer">
+        <span class="byd-card-electrico">⚡ 0 emisiones</span>
+        <a class="byd-card-btn" href="https://wa.me/5491170662694?text=Hola%21%20Me%20interesa%20el%20BYD%20Shark.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%20y%20precio%3F" target="_blank">💬 Consultar</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="byd-banner-inferior">
+    <div>
+      <h3>¿Primera vez con un eléctrico?</h3>
+      <p>Te asesoramos sin compromiso. Contamos todo sobre carga, autonomía y costos de mantenimiento.</p>
+    </div>
+    <a href="https://wa.me/5491170662694?text=Hola%21%20Quiero%20informaci%C3%B3n%20sobre%20los%20autos%20el%C3%A9ctricos%20BYD%20disponibles%20en%20JJ%20Boer." class="btn-primary" target="_blank">⚡ Hablar con un asesor</a>
+  </div>
+</div>
+
+<footer>
+  <img src="/JJ BOER LOGO.png" alt="JJ Boer Automotores" style="height:30px;">
+  <ul class="footer-links">
+    <li><a href="/#stock">Stock</a></li>
+    <li><a href="/#nosotros">Nosotros</a></li>
+    <li><a href="/#contacto">Contacto</a></li>
+    <li><a href="https://instagram.com/jjboerautomotores" target="_blank">Instagram</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 JJ Boer Automotores · Villa Luro, Buenos Aires</p>
+</footer>
+</body>
+</html>
