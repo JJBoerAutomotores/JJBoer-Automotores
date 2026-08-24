@@ -55,6 +55,27 @@ footer img{height:32px;}
 .footer-copy{font-size:12px;color:var(--gris);}
 @media(max-width:900px){nav{padding:0 20px;}.nav-links{display:none;}.page-hero{padding:110px 20px 48px;}.okm-body{padding:40px 20px;}.okm-grid{grid-template-columns:1fr 1fr;}footer{padding:32px 20px;flex-direction:column;align-items:flex-start;}}
 @media(max-width:600px){.okm-grid{grid-template-columns:1fr;}}
+
+  .okm-card-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    background: #222;
+    border-radius: 2px;
+    margin-bottom: 4px;
+  }
+  .okm-card-img-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, #1a1a1a, #222);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: rgba(255,255,255,0.1);
+    margin-bottom: 4px;
+  }
 </style>
 </head>
 <body>
@@ -92,6 +113,7 @@ footer img{height:32px;}
   <p class="stock-count" id="stockCount">22 modelos disponibles</p>
   <div class="okm-grid" id="okmGrid">
       <div class="okm-card" data-marca="volkswagen">
+        <img src="https://raw.githubusercontent.com/JJBoerAutomotores/JJBoer-Automotores/main/fotos/0km/Polo.png" alt="Polo" class="okm-card-img" loading="lazy">
         <p class="okm-card-marca">Volkswagen</p>
         <h3 class="okm-card-nombre">Polo</h3>
         <p class="okm-card-version okm-card-versions">Track 1.6 MSI Manual &middot; Comfortline 170TSI AT &middot; Highline 170TSI AT</p>
@@ -101,6 +123,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="volkswagen">
+        <img src="https://raw.githubusercontent.com/JJBoerAutomotores/JJBoer-Automotores/main/fotos/0km/Saveiro.png" alt="Saveiro" class="okm-card-img" loading="lazy">
         <p class="okm-card-marca">Volkswagen</p>
         <h3 class="okm-card-nombre">Saveiro</h3>
         <p class="okm-card-version">CS Trendline 1.6 MSI</p>
@@ -110,6 +133,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="volkswagen">
+        <img src="https://raw.githubusercontent.com/JJBoerAutomotores/JJBoer-Automotores/main/fotos/0km/Tera.png" alt="Tera" class="okm-card-img" loading="lazy">
         <p class="okm-card-marca">Volkswagen</p>
         <h3 class="okm-card-nombre">Tera</h3>
         <p class="okm-card-version okm-card-versions">1.6 MSI sin Pack Safe &middot; 1.6 MSI con Pack Safe &middot; Comfort 170TSI AT &middot; High 170TSI AT &middot; Outfit 170TSI AT</p>
@@ -119,6 +143,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="volkswagen">
+        <img src="https://raw.githubusercontent.com/JJBoerAutomotores/JJBoer-Automotores/main/fotos/0km/Nivus.png" alt="Nivus" class="okm-card-img" loading="lazy">
         <p class="okm-card-marca">Volkswagen</p>
         <h3 class="okm-card-nombre">Nivus</h3>
         <p class="okm-card-version okm-card-versions">Sense 170TSI Manual &middot; Trendline 200TSI AT &middot; Comfortline 200TSI AT &middot; Highline 200TSI AT &middot; Outfit 200TSI AT</p>
@@ -128,6 +153,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="volkswagen">
+        <img src="https://raw.githubusercontent.com/JJBoerAutomotores/JJBoer-Automotores/main/fotos/0km/Tcross.png" alt="T-Cross" class="okm-card-img" loading="lazy">
         <p class="okm-card-marca">Volkswagen</p>
         <h3 class="okm-card-nombre">T-Cross</h3>
         <p class="okm-card-version okm-card-versions">Sense 170TSI Manual &middot; Trendline 200TSI AT &middot; Comfortline 200TSI Tiptronic &middot; Highline 200TSI AT &middot; Highline Bi-Tono 200TSI &middot; Highline Extreme 200TSI AT</p>
@@ -137,6 +163,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="volkswagen">
+        <img src="https://raw.githubusercontent.com/JJBoerAutomotores/JJBoer-Automotores/main/fotos/0km/Taos.png" alt="Taos" class="okm-card-img" loading="lazy">
         <p class="okm-card-marca">Volkswagen</p>
         <h3 class="okm-card-nombre">Taos</h3>
         <p class="okm-card-version okm-card-versions">Highline 250TSI &middot; Highline Bi-Tono 250TSI</p>
@@ -146,6 +173,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="volkswagen">
+        <img src="https://raw.githubusercontent.com/JJBoerAutomotores/JJBoer-Automotores/main/fotos/0km/Vento.png" alt="Vento GLI" class="okm-card-img" loading="lazy">
         <p class="okm-card-marca">Volkswagen</p>
         <h3 class="okm-card-nombre">Vento GLI</h3>
         <p class="okm-card-version">350TSI DSG</p>
@@ -155,6 +183,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="volkswagen">
+        <img src="https://raw.githubusercontent.com/JJBoerAutomotores/JJBoer-Automotores/main/fotos/0km/Tiguan.png" alt="Tiguan" class="okm-card-img" loading="lazy">
         <p class="okm-card-marca">Volkswagen</p>
         <h3 class="okm-card-nombre">Tiguan</h3>
         <p class="okm-card-version">R-LINE 250TSI</p>
@@ -164,6 +193,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="volkswagen">
+        <img src="https://raw.githubusercontent.com/JJBoerAutomotores/JJBoer-Automotores/main/fotos/0km/Amarok.png" alt="Amarok" class="okm-card-img" loading="lazy">
         <p class="okm-card-marca">Volkswagen</p>
         <h3 class="okm-card-nombre">Amarok</h3>
         <p class="okm-card-version okm-card-versions">TL 4x2 DC 140CV &middot; TL 4x4 DC 180CV &middot; CF 4x2 Manual 180CV &middot; CF 4x2 AT 180CV &middot; Highline 4x2 AT 180CV &middot; Trendline TDI MT 4x2 G2 &middot; Trendline TDI MT 4x4 G2 &middot; Comfortline MT 4x2 G2 &middot; Comfortline AT 4x2 G2 &middot; Highline AT 4x2 G2 &middot; V6 Comfortline 258CV &middot; V6 Comfortline AT 4x4 G2 &middot; V6 Highline 258CV &middot; V6 Highline AT 4x4 G2 &middot; V6 Extreme 258CV &middot; V6 Extreme AT 4x4 G2 &middot; V6 Hero 258CV &middot; V6 Hero AT 4x4 G2 &middot; V6 Black Style 258CV &middot; V6 Black Style AT 4x4 G2</p>
@@ -173,6 +203,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="renault">
+        <div class="okm-card-img-placeholder">🚗</div>
         <p class="okm-card-marca">Renault</p>
         <h3 class="okm-card-nombre">Kwid</h3>
         <p class="okm-card-version okm-card-versions">Iconic Bitono 1.0 &middot; Iconic Outsider 1.0</p>
@@ -182,6 +213,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="renault">
+        <div class="okm-card-img-placeholder">🚗</div>
         <p class="okm-card-marca">Renault</p>
         <h3 class="okm-card-nombre">Kardian</h3>
         <p class="okm-card-version okm-card-versions">Evolution MT MY25 &middot; Evolution EDC MY25 &middot; Iconic EDC MY25</p>
@@ -191,6 +223,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="renault">
+        <div class="okm-card-img-placeholder">🚗</div>
         <p class="okm-card-marca">Renault</p>
         <h3 class="okm-card-nombre">Duster</h3>
         <p class="okm-card-version okm-card-versions">Intens 1.6 MT &middot; Iconic 1.3T CVT &middot; Iconic 1.3T 4x4 MT</p>
@@ -200,6 +233,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="renault">
+        <div class="okm-card-img-placeholder">🚗</div>
         <p class="okm-card-marca">Renault</p>
         <h3 class="okm-card-nombre">Arkana</h3>
         <p class="okm-card-version">E-Tech Hybrid Esprit Alpine</p>
@@ -209,6 +243,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="renault">
+        <div class="okm-card-img-placeholder">🚗</div>
         <p class="okm-card-marca">Renault</p>
         <h3 class="okm-card-nombre">Boreal</h3>
         <p class="okm-card-version okm-card-versions">Evolution &middot; Techno &middot; Iconic</p>
@@ -218,6 +253,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="renault">
+        <div class="okm-card-img-placeholder">🚗</div>
         <p class="okm-card-marca">Renault</p>
         <h3 class="okm-card-nombre">Koleos</h3>
         <p class="okm-card-version okm-card-versions">Techno &middot; Esprit Alpine Full Hybrid E-Tech</p>
@@ -227,6 +263,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="renault">
+        <div class="okm-card-img-placeholder">🚗</div>
         <p class="okm-card-marca">Renault</p>
         <h3 class="okm-card-nombre">Oroch</h3>
         <p class="okm-card-version okm-card-versions">Emotion 1.6 SCe 114 2WD &middot; Iconic 1.3 TCe 163 2WD CVT &middot; Outsider 1.3 TCe 163 4WD</p>
@@ -236,6 +273,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="renault">
+        <div class="okm-card-img-placeholder">🚗</div>
         <p class="okm-card-marca">Renault</p>
         <h3 class="okm-card-nombre">Kangoo</h3>
         <p class="okm-card-version okm-card-versions">II Zen 1.6 Sce Pasajero &middot; II Stepway 1.6 Sce Pasajero &middot; II Express 2A 1.6 SCe Furgon &middot; II Express 5A 1.6 SCe Furgon</p>
@@ -245,6 +283,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="renault">
+        <div class="okm-card-img-placeholder">🚗</div>
         <p class="okm-card-marca">Renault</p>
         <h3 class="okm-card-nombre">Master</h3>
         <p class="okm-card-version okm-card-versions">Furgon L1H1 &middot; Furgon L2H2 &middot; Furgon L3H2</p>
@@ -254,6 +293,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="peugeot">
+        <div class="okm-card-img-placeholder">🚗</div>
         <p class="okm-card-marca">Peugeot</p>
         <h3 class="okm-card-nombre">208</h3>
         <p class="okm-card-version okm-card-versions">Allure MT &middot; Allure AT AM26 &middot; Allure PK T200 AM26 &middot; GT T200 AM26</p>
@@ -263,6 +303,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="peugeot">
+        <div class="okm-card-img-placeholder">🚗</div>
         <p class="okm-card-marca">Peugeot</p>
         <h3 class="okm-card-nombre">2008</h3>
         <p class="okm-card-version okm-card-versions">Active T200 AM26 &middot; Allure T200 AM26 &middot; GT T200 AM26</p>
@@ -272,6 +313,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="peugeot">
+        <div class="okm-card-img-placeholder">🚗</div>
         <p class="okm-card-marca">Peugeot</p>
         <h3 class="okm-card-nombre">5008</h3>
         <p class="okm-card-version">GT Okinite White</p>
@@ -281,6 +323,7 @@ footer img{height:32px;}
         </div>
       </div>
       <div class="okm-card" data-marca="peugeot">
+        <div class="okm-card-img-placeholder">🚗</div>
         <p class="okm-card-marca">Peugeot</p>
         <h3 class="okm-card-nombre">Partner</h3>
         <p class="okm-card-version">1.6 HDi</p>
